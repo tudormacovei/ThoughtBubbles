@@ -384,7 +384,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choicePrefab: {fileID: 2232764650507109241, guid: 887eb26312bbb604eb39677f13dbbdbd, type: 3}
-  offset: 50
+  choiceAnimOffset: 50
+  activeChoiceList: []
+  questionPrefab: {fileID: 5661567841368590745, guid: fb83b65daf5262244a470cc0760c3201, type: 3}
+  question: {fileID: 0}
+  questionPositionOffset: {x: 300, y: 300}
   playerTransform: {fileID: 1877962762}
 --- !u!1 &1666445041
 GameObject:

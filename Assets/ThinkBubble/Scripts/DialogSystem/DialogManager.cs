@@ -5,17 +5,35 @@ using System;
 
 public class DialogManager : MonoBehaviour
 {
+    public static DialogManager Instance;
+
     [Header("Choice")]
     [SerializeField] private GameObject choicePrefab;
-    [SerializeField] private float offset;
+    [SerializeField] private float choiceAnimOffset;
     private Queue<GameObject> choicePool = new Queue<GameObject>();
+    [SerializeField] private List<GameObject> activeChoiceList = new List<GameObject>(); 
+
+    [Header("Question")]
+    [SerializeField] private GameObject questionPrefab;
+    [SerializeField] private GameObject question;
+    [SerializeField] private Vector2 questionPositionOffset;
 
     [Header("Player")]
     public Transform playerTransform;
 
-    void Start()
-    {
+    [Header("Test")]
+    [SerializeField] private int choiceCount;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
@@ -23,17 +41,25 @@ public class DialogManager : MonoBehaviour
         
     }
 
-    [ContextMenu("CreateChoice")]
-    void CreateChoiceTest()
+    [ContextMenu("SpawnDialogTest")]
+    void SpawnDialogTest()
     {
-        CreateChoice(3);
+        SpawnDialog(choiceCount);
     }
 
-    void CreateChoice(int choiceNum)
+    public void SpawnDialog(int choiceNum)
     {
+        if (choiceNum <= 0)
+        {
+            Debug.LogError("The number of choices is 0 or less!");
+            return;
+        }
+
         GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(playerTransform.position);
 
-        for(int i = 0; i < choiceNum; i++)
+        SpawnQuestion();
+
+        for (int i = 0; i < choiceNum; i++)
         {
             GameObject choice = GetChoice();
 
@@ -47,24 +73,39 @@ public class DialogManager : MonoBehaviour
                 distanceY++;
             }
 
-            StartCoroutine(choice.GetComponent<ChoiceMove>().CoAnimateButton(distanceY * offset));
+            StartCoroutine(choice.GetComponent<ChoiceMove>().CoAnimateButton(distanceY * choiceAnimOffset));
         }
-
     }
- 
+
+    void SpawnQuestion()
+    {
+        if(question == null)
+        {
+            question = Instantiate(questionPrefab, Vector2.zero, Quaternion.identity);
+            question.transform.SetParent(transform);
+        }
+        question.GetComponent<RectTransform>().anchoredPosition = questionPositionOffset;
+
+        question.SetActive(true);
+    }
+
+    #region Pooling Choice Object 
     GameObject GetChoice()
     {
+        GameObject choice;
+
         if (choicePool.Count > 0)
         {
-            return choicePool.Dequeue();
+            choice = choicePool.Dequeue();
         }
         else
         {
-            GameObject choice = Instantiate(choicePrefab, Vector2.zero, Quaternion.identity);
+            choice = Instantiate(choicePrefab, Vector2.zero, Quaternion.identity);
             choice.transform.SetParent(transform);
-
-            return choice;
         }
+
+        activeChoiceList.Add(choice);
+        return choice;
     }
 
     void ReleaseChoice(GameObject choice)
@@ -72,4 +113,5 @@ public class DialogManager : MonoBehaviour
         choice.SetActive(false);
         choicePool.Enqueue(choice);
     }
+    #endregion
 }
