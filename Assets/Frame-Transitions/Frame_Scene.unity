@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 951321096}
   _unInteractable: {fileID: 740472052}
 --- !u!1 &89761612
@@ -963,6 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 96808906}
   _unInteractable: {fileID: 1364579052}
 --- !u!1 &173650552
@@ -1012,6 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 1890996727}
   _unInteractable: {fileID: 1083511558}
 --- !u!61 &173650555
@@ -2040,6 +2043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 1661484281}
   _unInteractable: {fileID: 790337729}
 --- !u!1 &667981325
@@ -2546,6 +2550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 732375733}
   _unInteractable: {fileID: 159027345}
 --- !u!1 &864475366
@@ -2769,6 +2774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 440463652}
   _unInteractable: {fileID: 1311202950}
 --- !u!61 &919876281
@@ -3410,7 +3416,7 @@ PrefabInstance:
       objectReference: {fileID: 1403330757}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: activeChoiceList.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: 'activeChoiceList.Array.data[0]'
@@ -3531,6 +3537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 136107185}
   _unInteractable: {fileID: 864475368}
 --- !u!1 &1311202948
@@ -4140,6 +4147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 1538794212}
   _unInteractable: {fileID: 1869343699}
 --- !u!61 &1595479329
@@ -5007,6 +5015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 1875105834}
   _unInteractable: {fileID: 878109398}
 --- !u!1 &1988199039
@@ -5191,6 +5200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 63479831}
   _unInteractable: {fileID: 1754885367}
 --- !u!1 &2042726667
@@ -5286,6 +5296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogIndex: 0
   _interactable: {fileID: 1071982891}
   _unInteractable: {fileID: 210730217}
 --- !u!1 &2064696175
