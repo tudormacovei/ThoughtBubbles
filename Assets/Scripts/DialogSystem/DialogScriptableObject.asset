@@ -17,10 +17,13 @@ MonoBehaviour:
     choices:
     - Yes, I do. Yes, I do.
     - No, I don't.
+    damageNumber: 0a00000003000000
   - question: Do you like ice cream?
     choices:
     - Yes, I do. Yes, I do.
     - No, I don't.
+    damageNumber: 0300000002000000
   - question: Do you like broccoli ice cream?
     choices:
     - NONONONONONONONONONO
+    damageNumber: 0400000001000000

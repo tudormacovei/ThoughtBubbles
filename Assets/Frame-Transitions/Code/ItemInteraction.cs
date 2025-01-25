@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ItemInteraction : MonoBehaviour
 {
+    [SerializeField] int _dialogIndex;
+
     [SerializeField] SpriteRenderer _interactable;
     [SerializeField] SpriteRenderer _unInteractable;
 
@@ -10,6 +12,8 @@ public class ItemInteraction : MonoBehaviour
     {
         StartCoroutine(SpriteFade(_interactable, 0, FrameController.Instance.FadeInDuration));
         StartCoroutine(FrameController.SpriteFade(_unInteractable, 1, FrameController.Instance.FadeInDuration));
+
+        DialogManager.Instance.SpawnDialog(_dialogIndex);
     }
 
     IEnumerator SpriteFade(SpriteRenderer sr, float endValue, float duration)

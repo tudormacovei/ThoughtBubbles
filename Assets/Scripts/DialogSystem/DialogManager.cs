@@ -1,7 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
-using System;
 
 public class DialogManager : MonoBehaviour
 {
@@ -61,7 +60,7 @@ public class DialogManager : MonoBehaviour
 
         for (int i = 0; i < choicesLength; i++)
         {
-            GameObject choice = GetChoice();
+            GameObject choice = GetChoice(dialogScriptableObject.dialogDatas[i].damageNumber[i]);
 
             choice.GetComponentInChildren<TMP_Text>().text = dialogScriptableObject.dialogDatas[dialogNum].choices[i];
 
@@ -102,7 +101,7 @@ public class DialogManager : MonoBehaviour
     }
 
     #region Pooling Choice Object 
-    GameObject GetChoice()
+    GameObject GetChoice(int damage)
     {
         GameObject choice;
 
@@ -114,6 +113,10 @@ public class DialogManager : MonoBehaviour
         {
             choice = Instantiate(choicePrefab, Vector2.zero, Quaternion.identity);
             choice.transform.SetParent(transform);
+            
+            if (choice.TryGetComponent(out ChoiceSelect cs)) {
+                cs.Damage = damage;
+            }
         }
 
         activeChoiceList.Add(choice);
