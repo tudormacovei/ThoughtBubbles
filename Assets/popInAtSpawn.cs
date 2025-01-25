@@ -93,12 +93,6 @@ public class popInAtSpawn : MonoBehaviour
         {
             Destroy(gameObject.transform.parent.gameObject);
         }
-
-        // Only for testing
-        if (lifetime > 50)
-        {
-            PopOut();
-        }
     }
 
     public void PopOut()
