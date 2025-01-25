@@ -1,0 +1,18 @@
+{
+    "name": "tdk.utilities.editor",
+    "rootNamespace": "tdk.Utilities.Editor",
+    "references": [
+        "GUID:3a396cd1de13c9d46a2d226426575195"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
