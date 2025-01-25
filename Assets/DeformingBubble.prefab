@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 339902743848966281}
   - component: {fileID: 6116011711795883748}
   - component: {fileID: 5243241190642508622}
-  - component: {fileID: 4862875277616796031}
   m_Layer: 6
   m_Name: bone_3
   m_TagString: Untagged
@@ -163,21 +162,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &4862875277616796031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560253083758370296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &1156905576622940770
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +176,6 @@ GameObject:
   - component: {fileID: 5398563571250351346}
   - component: {fileID: 596913067383441018}
   - component: {fileID: 6417053024672432429}
-  - component: {fileID: 2576577426110098066}
   m_Layer: 6
   m_Name: bone_9
   m_TagString: Untagged
@@ -341,21 +324,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &2576577426110098066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156905576622940770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &2208949501923213348
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +338,6 @@ GameObject:
   - component: {fileID: 6663052306274744293}
   - component: {fileID: 1362448689514641900}
   - component: {fileID: 3922150643084497907}
-  - component: {fileID: 2385225549782546699}
   m_Layer: 6
   m_Name: bone_11
   m_TagString: Untagged
@@ -519,21 +486,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &2385225549782546699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2208949501923213348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &3645639697369202026
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +625,6 @@ GameObject:
   - component: {fileID: 4469954669101390640}
   - component: {fileID: 3059034126246816271}
   - component: {fileID: 1414621138104498267}
-  - component: {fileID: 4235954790106758714}
   m_Layer: 6
   m_Name: bone_14
   m_TagString: Untagged
@@ -822,21 +773,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &4235954790106758714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778043949959342477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &4479101881990510959
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +787,6 @@ GameObject:
   - component: {fileID: 1373803261811170531}
   - component: {fileID: 7538595790005341699}
   - component: {fileID: 5636968345054005377}
-  - component: {fileID: 1309276319939723650}
   m_Layer: 6
   m_Name: bone_12
   m_TagString: Untagged
@@ -1000,21 +935,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &1309276319939723650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4479101881990510959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &4506551242862382523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +949,6 @@ GameObject:
   - component: {fileID: 3918644586350467915}
   - component: {fileID: 5772895630395960317}
   - component: {fileID: 1462758808970917050}
-  - component: {fileID: 9083173126875553258}
   m_Layer: 6
   m_Name: bone_10
   m_TagString: Untagged
@@ -1178,21 +1097,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &9083173126875553258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4506551242862382523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &5136436697657851996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1111,6 @@ GameObject:
   - component: {fileID: 3174913582079016068}
   - component: {fileID: 6775566778696363018}
   - component: {fileID: 2071977180078214961}
-  - component: {fileID: 3726897319347703291}
   m_Layer: 6
   m_Name: bone_7
   m_TagString: Untagged
@@ -1356,21 +1259,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &3726897319347703291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5136436697657851996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &5607929506751334168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1273,6 @@ GameObject:
   - component: {fileID: 5769098855110092196}
   - component: {fileID: 3978614490075142972}
   - component: {fileID: 1993784987993703232}
-  - component: {fileID: 5426030369333363800}
   m_Layer: 6
   m_Name: bone_1
   m_TagString: Untagged
@@ -1534,21 +1421,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &5426030369333363800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5607929506751334168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &6537928628838282016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,7 +1547,6 @@ GameObject:
   - component: {fileID: 7118989101902132927}
   - component: {fileID: 1414670307510516905}
   - component: {fileID: 3336200401443827396}
-  - component: {fileID: 1287337091537381160}
   m_Layer: 6
   m_Name: bone_4
   m_TagString: Untagged
@@ -1824,21 +1695,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &1287337091537381160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6633538824224212430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &7140288805316400271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1709,6 @@ GameObject:
   - component: {fileID: 8850320086252724473}
   - component: {fileID: 1639905306894470850}
   - component: {fileID: 460778624379452198}
-  - component: {fileID: 4585638089156440105}
   m_Layer: 6
   m_Name: bone_5
   m_TagString: Untagged
@@ -2002,21 +1857,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &4585638089156440105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7140288805316400271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &7400639163262816035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +1871,6 @@ GameObject:
   - component: {fileID: 5820314915995928886}
   - component: {fileID: 6458568982138030212}
   - component: {fileID: 5549289121740458966}
-  - component: {fileID: 4255238498270094229}
   m_Layer: 6
   m_Name: bone_13
   m_TagString: Untagged
@@ -2180,21 +2019,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &4255238498270094229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7400639163262816035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &7572388957249954956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,7 +2033,6 @@ GameObject:
   - component: {fileID: 5374427480812596428}
   - component: {fileID: 4637671085915243616}
   - component: {fileID: 5288362460209226338}
-  - component: {fileID: 1301550382332180721}
   m_Layer: 6
   m_Name: bone_15
   m_TagString: Untagged
@@ -2358,21 +2181,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &1301550382332180721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7572388957249954956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &7589194699376782487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,7 +2195,6 @@ GameObject:
   - component: {fileID: 449076138015922984}
   - component: {fileID: 4529822328345467822}
   - component: {fileID: 8662680305072070938}
-  - component: {fileID: 2403152455842117897}
   m_Layer: 6
   m_Name: bone_6
   m_TagString: Untagged
@@ -2536,21 +2343,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &2403152455842117897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589194699376782487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &7694620839436956196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,7 +2357,6 @@ GameObject:
   - component: {fileID: 8166805463526105923}
   - component: {fileID: 4515925459075123961}
   - component: {fileID: 5218309664783899026}
-  - component: {fileID: 4555811169161306489}
   m_Layer: 6
   m_Name: bone_2
   m_TagString: Untagged
@@ -2714,21 +2505,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &4555811169161306489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7694620839436956196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &8317834736446497550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,7 +2519,6 @@ GameObject:
   - component: {fileID: 109738779241924501}
   - component: {fileID: 7197761072686466358}
   - component: {fileID: 4749515793740012901}
-  - component: {fileID: 6815475701249269280}
   m_Layer: 6
   m_Name: bone_8
   m_TagString: Untagged
@@ -2892,21 +2667,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &6815475701249269280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8317834736446497550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6
 --- !u!1 &8521969916385679676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,7 +2681,6 @@ GameObject:
   - component: {fileID: 6727172844864406031}
   - component: {fileID: 5308035223806495617}
   - component: {fileID: 7098993849127794080}
-  - component: {fileID: 3965288246022515922}
   m_Layer: 6
   m_Name: bone_16
   m_TagString: Untagged
@@ -3070,18 +2829,3 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.6
   m_Frequency: 8
---- !u!114 &3965288246022515922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8521969916385679676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2251f296e1184589954984f0ba732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Midpoint: {fileID: 6537928628838282016}
-  strength: 10
-  applyRadius: 0.6

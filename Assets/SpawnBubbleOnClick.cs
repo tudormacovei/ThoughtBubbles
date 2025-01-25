@@ -16,5 +16,13 @@ public class SpawnBubbleOnClick : MonoBehaviour
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             BubbleManager.Instance.AddBubble(pos);
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            BubbleManager.Instance.RemoveAllBubbles();
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            BubbleManager.Instance.AddExistingBubbles();
+        }
     }
 }
