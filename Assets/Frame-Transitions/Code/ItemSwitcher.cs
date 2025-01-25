@@ -35,7 +35,14 @@ public class ItemSwitcher : MonoBehaviour
     {
         for (int i = 0; i < _coloredItems.Length; i++)
         {
-            StartCoroutine(FrameController.SpriteFade(_coloredItems[i], 1, FrameController.Instance.FadeInDuration));
+            if (!_coloredItems[i].gameObject.activeInHierarchy)
+            {
+                StartCoroutine(FrameController.SpriteFade(_shadedItems[i], 1, FrameController.Instance.FadeInDuration));
+            }
+            else
+            {
+                StartCoroutine(FrameController.SpriteFade(_coloredItems[i], 1, FrameController.Instance.FadeInDuration));
+            }
         }
     }
 }
