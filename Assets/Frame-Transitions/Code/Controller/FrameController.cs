@@ -4,28 +4,45 @@ using UnityEngine;
 
 public class FrameController : MonoBehaviour
 {
+    [Header("INPUT")]
     [SerializeField] Button _left;
     [SerializeField] Button _right;
 
     [SerializeField]
     Transform[] _frames;
+    SpriteRenderer[] _framefade;
 
-    [SerializeField]
-    float duration;
+    [SerializeField] float moveDuration;
+    [SerializeField] float fadeDuration;
 
     int _currentFrame;
 
     bool _isMoving;
 
+    void Awake()
+    {
+        _framefade = new SpriteRenderer[_frames.Length];
+
+        for(int i = 0; i < _frames.Length; i++)
+        {
+            _framefade[i] = _frames[i].GetComponent<SpriteRenderer>();
+        }
+    }
+
     public void MoveNext()
     {
         if (_currentFrame == _frames.Length - 1) return;
+
+        int previousFrame = _currentFrame;
 
         if (!_isMoving)
         {
             _currentFrame++;
 
-            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, duration));
+            StartCoroutine(SpriteFade(_framefade[previousFrame], 1, fadeDuration));
+            StartCoroutine(SpriteFade(_framefade[_currentFrame], 0, fadeDuration));
+
+            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, moveDuration));
         }
     }
 
@@ -33,11 +50,16 @@ public class FrameController : MonoBehaviour
     {
         if (_currentFrame == 0) return;
 
+        int previousFrame = _currentFrame;
+
         if (!_isMoving)
         {
             _currentFrame--;
 
-            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, duration));
+            StartCoroutine(SpriteFade(_framefade[previousFrame], 1, fadeDuration));
+            StartCoroutine(SpriteFade(_framefade[_currentFrame], 0, fadeDuration));
+
+            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, moveDuration));
         }
     }
 
@@ -58,6 +80,19 @@ public class FrameController : MonoBehaviour
         _isMoving = false;
 
         EnableButtons();
+    }
+
+    IEnumerator SpriteFade(SpriteRenderer sr, float endValue, float duration)
+    {
+        float elapsedTime = 0;
+        float startValue = sr.color.a;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float newAlpha = Mathf.Lerp(startValue, endValue, elapsedTime / duration);
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, newAlpha);
+            yield return null;
+        }
     }
 
     void DisableButtons()
