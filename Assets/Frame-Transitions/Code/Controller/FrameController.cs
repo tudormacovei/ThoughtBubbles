@@ -26,7 +26,11 @@ public class FrameController : MonoBehaviour
         for(int i = 0; i < _frames.Length; i++)
         {
             _framefade[i] = _frames[i].GetComponent<SpriteRenderer>();
+
+            StartCoroutine(SpriteFade(_framefade[i], 0, 0.1f));
         }
+
+        StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, 0.1f));
     }
 
     public void MoveNext()
@@ -39,8 +43,8 @@ public class FrameController : MonoBehaviour
         {
             _currentFrame++;
 
-            StartCoroutine(SpriteFade(_framefade[previousFrame], 1, fadeDuration));
-            StartCoroutine(SpriteFade(_framefade[_currentFrame], 0, fadeDuration));
+            StartCoroutine(SpriteFade(_framefade[previousFrame], 0, fadeDuration));
+            StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, fadeDuration));
 
             StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, moveDuration));
         }
@@ -56,8 +60,8 @@ public class FrameController : MonoBehaviour
         {
             _currentFrame--;
 
-            StartCoroutine(SpriteFade(_framefade[previousFrame], 1, fadeDuration));
-            StartCoroutine(SpriteFade(_framefade[_currentFrame], 0, fadeDuration));
+            StartCoroutine(SpriteFade(_framefade[previousFrame], 0, fadeDuration));
+            StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, fadeDuration));
 
             StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, moveDuration));
         }
