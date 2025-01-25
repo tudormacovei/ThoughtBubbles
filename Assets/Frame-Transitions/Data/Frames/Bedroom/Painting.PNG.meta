@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 0b0fd3042b2382243a9dcaecac3147f0
+guid: 466f1645c8aba2c40a23d90e261c9b49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4839289237760220531
-    second: IMG_4120_0
+      213: 7518132026514195565
+    second: Painting_0
   - first:
-      213: 1272003993534649367
-    second: IMG_4120_1
+      213: -942401399355549220
+    second: Painting_1
   - first:
-      213: 4626586022971081901
-    second: IMG_4120_2
+      213: -4176556120225052815
+    second: Painting_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_4120_0
+      name: Painting_0
       rect:
         serializedVersion: 2
-        x: 302
-        y: 287
-        width: 1289
-        height: 3477
+        x: 0
+        y: 3774
+        width: 925
+        height: 469
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,19 +121,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d826ee1f31467dcb0800000000000000
-      internalID: -4839289237760220531
+      spriteID: d64cddece35c55860800000000000000
+      internalID: 7518132026514195565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_4120_1
+      name: Painting_1
       rect:
         serializedVersion: 2
-        x: 858
-        y: 3757
-        width: 10
+        x: 0
+        y: 3716
+        width: 873
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9d49b9beaebe2f0800000000000000
+      internalID: -942401399355549220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Painting_2
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 3714
+        width: 164
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,30 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 714d28b84e017a110800000000000000
-      internalID: 1272003993534649367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_4120_2
-      rect:
-        serializedVersion: 2
-        x: 885
-        y: 3757
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da48af5a97fe43040800000000000000
-      internalID: 4626586022971081901
+      spriteID: 17780854654e906c0800000000000000
+      internalID: -4176556120225052815
       vertices: []
       indices: 
       edges: []
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_4120_0: -4839289237760220531
-      IMG_4120_1: 1272003993534649367
-      IMG_4120_2: 4626586022971081901
+      Painting_0: 7518132026514195565
+      Painting_1: -942401399355549220
+      Painting_2: -4176556120225052815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

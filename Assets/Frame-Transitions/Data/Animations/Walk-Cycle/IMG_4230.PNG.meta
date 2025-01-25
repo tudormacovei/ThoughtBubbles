@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 7d0d960427fb64e4fbba49b8988426a5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1002261947725048473
+    second: IMG_4230_0
+  - first:
+      213: -387359489452413638
+    second: IMG_4230_1
+  - first:
+      213: 3183911761826991176
+    second: IMG_4230_2
+  - first:
+      213: -9007621865877314779
+    second: IMG_4230_3
+  - first:
+      213: 4499946679264266932
+    second: IMG_4230_4
+  - first:
+      213: 2100435289215467964
+    second: IMG_4230_5
+  - first:
+      213: 5947241229618449969
+    second: IMG_4230_6
+  - first:
+      213: 639660323060660255
+    second: IMG_4230_7
+  - first:
+      213: 5793030729385431611
+    second: IMG_4230_8
+  - first:
+      213: 8732609008961088504
+    second: IMG_4230_9
+  - first:
+      213: 4492421299724085380
+    second: IMG_4230_10
+  - first:
+      213: 3968764079508258242
+    second: IMG_4230_11
+  - first:
+      213: -2606170794158774075
+    second: IMG_4230_12
+  - first:
+      213: -7995162961044880152
+    second: IMG_4230_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IMG_4230_0
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 1494
+        width: 49
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76515f991104712f0800000000000000
+      internalID: -1002261947725048473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 235
+        width: 514
+        height: 1151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3defceb892df9af0800000000000000
+      internalID: -387359489452413638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_2
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 208
+        width: 511
+        height: 1142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84cc2e7d0e68f2c20800000000000000
+      internalID: 3183911761826991176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_3
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 133
+        width: 329
+        height: 1219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 523675d23af7ef280800000000000000
+      internalID: -9007621865877314779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_4
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 247
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bacebdb9a5037e30800000000000000
+      internalID: 4499946679264266932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_5
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 163
+        width: 396
+        height: 1201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1026754ce362d10800000000000000
+      internalID: 2100435289215467964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_6
+      rect:
+        serializedVersion: 2
+        x: 2101
+        y: 165
+        width: 518
+        height: 1164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e07f47368d88250800000000000000
+      internalID: 5947241229618449969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_7
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 133
+        width: 317
+        height: 1243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1831fcbca780e800800000000000000
+      internalID: 639660323060660255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_8
+      rect:
+        serializedVersion: 2
+        x: 3060
+        y: 153
+        width: 470
+        height: 1168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32d0fd61caf46050800000000000000
+      internalID: 5793030729385431611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_9
+      rect:
+        serializedVersion: 2
+        x: 3634
+        y: 145
+        width: 382
+        height: 1207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb608550a5703970800000000000000
+      internalID: 8732609008961088504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_10
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 220
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488e377ce59485e30800000000000000
+      internalID: 4492421299724085380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_4230_11
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 127
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd7b6427e1e31730800000000000000
+      internalID: 3968764079508258242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6ba63c56004a9d44baa4d9a4da8c33e8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IMG_4230_0: -1002261947725048473
+      IMG_4230_1: -387359489452413638
+      IMG_4230_10: 4492421299724085380
+      IMG_4230_11: 3968764079508258242
+      IMG_4230_2: 3183911761826991176
+      IMG_4230_3: -9007621865877314779
+      IMG_4230_4: 4499946679264266932
+      IMG_4230_5: 2100435289215467964
+      IMG_4230_6: 5947241229618449969
+      IMG_4230_7: 639660323060660255
+      IMG_4230_8: 5793030729385431611
+      IMG_4230_9: 8732609008961088504
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
