@@ -46,6 +46,10 @@ public class BubbleManager : MonoBehaviour
 
     IEnumerator SpawnBubblesRoutine()
     {
+        if (BubbleCount == 0)
+        {
+            yield break;
+        }
         while (enabled)
         {
             Vector3 position = SpawnPositions[BubbleList.Count % SpawnPositions.Count].transform.position;
@@ -76,9 +80,8 @@ public class BubbleManager : MonoBehaviour
         from.z = 0.0f;
         to.z = 0.0f;
         Quaternion rotation = Quaternion.FromToRotation(from, to);
-        Vector3 offset = new Vector3(0, 0, 10); // to ensure the sprite is visible
-        var obj = Instantiate(BubbleClass, position + offset, rotation);
-        obj.transform.localScale *= Random.Range(0.5f, 1.0f);
+        var obj = Instantiate(BubbleClass, position, rotation);
+        obj.transform.localScale *= Random.Range(0.65f, 1.0f);
         
         BubbleCount++;
         BubbleList.Add(obj);
@@ -134,5 +137,22 @@ public class BubbleManager : MonoBehaviour
        Debug.Log(BubbleCount);
 
        StartCoroutine(SpawnBubblesRoutine());
+    }
+
+    public IEnumerator Move(bool moveNext)
+    {
+        RemoveAllBubbles();
+        yield return new WaitForSeconds(0.7f);
+
+        Vector3 offset = new Vector3(4.0f, 0.0f, 0.0f);
+        if (moveNext)
+        {
+            transform.position += offset;
+        }
+        else
+        {
+            transform .position -= offset;
+        }
+        AddExistingBubbles();
     }
 }
