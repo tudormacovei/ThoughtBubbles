@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 789834640343953219}
   - component: {fileID: 1378949694201803512}
   - component: {fileID: 833135710392772944}
+  - component: {fileID: 4478642113580441133}
   m_Layer: 5
   m_Name: Choice
   m_TagString: Untagged
@@ -132,6 +133,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 560b2ca1ebe7db145b4ea0f7d309a888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animOffset: 0.1
+--- !u!114 &4478642113580441133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232764650507109241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8581bb23d642b23469e8f80d1ddb155b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7257544222494790694

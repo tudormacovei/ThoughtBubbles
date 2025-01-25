@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53e367a708feea43876c6b58a1425bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogScriptableObject: {fileID: 11400000, guid: 39662dbbae1ef5c4790faf013d377823, type: 2}
   choicePrefab: {fileID: 2232764650507109241, guid: 887eb26312bbb604eb39677f13dbbdbd, type: 3}
   choiceAnimOffset: 50
   activeChoiceList: []
@@ -390,6 +391,7 @@ MonoBehaviour:
   question: {fileID: 0}
   questionPositionOffset: {x: 300, y: 300}
   playerTransform: {fileID: 1877962762}
+  myNum: 2
 --- !u!1 &1666445041
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class DialogManager : MonoBehaviour
 {
     public static DialogManager Instance;
 
+    [Header("ScriptableObject")]
+    [SerializeField] private DialogScriptableObjectScript dialogScriptableObject;
+
     [Header("Choice")]
     [SerializeField] private GameObject choicePrefab;
     [SerializeField] private float choiceAnimOffset;
@@ -22,7 +25,7 @@ public class DialogManager : MonoBehaviour
     public Transform playerTransform;
 
     [Header("Test")]
-    [SerializeField] private int choiceCount;
+    [SerializeField] private int myNum;
 
     void Awake()
     {
@@ -36,39 +39,36 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     [ContextMenu("SpawnDialogTest")]
     void SpawnDialogTest()
     {
-        SpawnDialog(choiceCount);
+        SpawnDialog(myNum);
     }
 
-    public void SpawnDialog(int choiceNum)
+    public void SpawnDialog(int dialogNum)
     {
-        if (choiceNum <= 0)
+        if (dialogNum < 0 || dialogNum >= dialogScriptableObject.dialogDatas.Length)
         {
-            Debug.LogError("The number of choices is 0 or less!");
+            Debug.LogError("The value of dialogNum is out of dialogScriptableObject.dialogDatas range!");
             return;
         }
 
         GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(playerTransform.position);
 
-        SpawnQuestion();
+        SpawnQuestion(dialogNum);
 
-        for (int i = 0; i < choiceNum; i++)
+        int choicesLength = dialogScriptableObject.dialogDatas[dialogNum].choices.Length;
+
+        for (int i = 0; i < choicesLength; i++)
         {
             GameObject choice = GetChoice();
 
-            choice.GetComponentInChildren<TMP_Text>().text = i.ToString();
+            choice.GetComponentInChildren<TMP_Text>().text = dialogScriptableObject.dialogDatas[dialogNum].choices[i];
 
             choice.SetActive(true);
 
-            int distanceY = i - choiceNum / 2;
-            if (choiceNum % 2 == 0 && i >= choiceNum / 2) // even number correction
+            int distanceY = i - choicesLength / 2;
+            if (choicesLength % 2 == 0 && i >= choicesLength / 2) // even number correction
             {
                 distanceY++;
             }
@@ -77,7 +77,7 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    void SpawnQuestion()
+    void SpawnQuestion(int dialogNum)
     {
         if(question == null)
         {
@@ -85,8 +85,20 @@ public class DialogManager : MonoBehaviour
             question.transform.SetParent(transform);
         }
         question.GetComponent<RectTransform>().anchoredPosition = questionPositionOffset;
+        question.GetComponentInChildren<TMP_Text>().text = dialogScriptableObject.dialogDatas[dialogNum].question;
 
         question.SetActive(true);
+    }
+
+    public void InactivateDialog()
+    {
+        question.SetActive(false);
+
+        foreach(var choice in activeChoiceList)
+        {
+            ReleaseChoice(choice);
+        }
+        activeChoiceList.Clear();
     }
 
     #region Pooling Choice Object 
