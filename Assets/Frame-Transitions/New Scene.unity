@@ -521,15 +521,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168278c59a79853408825dfaa0405eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input:
-  - {fileID: 1051270473}
-  - {fileID: 1057071043}
+  _left: {fileID: 1051270473}
+  _right: {fileID: 1057071043}
   _frames:
   - {fileID: 82537969}
   - {fileID: 1709063081}
   - {fileID: 1988199040}
   - {fileID: 422106645}
-  speed: 5
+  duration: 2
 --- !u!1 &1051270471
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,8 +613,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 691279242}
         m_TargetAssemblyTypeName: FrameController, Assembly-CSharp
-        m_MethodName: MoveFrame
-        m_Mode: 3
+        m_MethodName: MovePrev
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -746,8 +745,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 691279242}
         m_TargetAssemblyTypeName: FrameController, Assembly-CSharp
-        m_MethodName: MoveFrame
-        m_Mode: 3
+        m_MethodName: MoveNext
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -1,37 +1,49 @@
 using System.Collections;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
 public class FrameController : MonoBehaviour
 {
-    [SerializeField]
-    Button[] _input;
+    [SerializeField] Button _left;
+    [SerializeField] Button _right;
 
     [SerializeField]
     Transform[] _frames;
 
     [SerializeField]
-    float speed;
+    float duration;
 
     int _currentFrame;
 
     bool _isMoving;
 
-    public void MoveFrame(int incIndex)
+    public void MoveNext()
     {
-        if (_currentFrame < 0 || _currentFrame >= _frames.Length - 1) return;
+        if (_currentFrame == _frames.Length - 1) return;
 
         if (!_isMoving)
         {
-            _currentFrame += incIndex;
+            _currentFrame++;
 
-            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, speed));
+            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, duration));
+        }
+    }
+
+    public void MovePrev()
+    {
+        if (_currentFrame == 0) return;
+
+        if (!_isMoving)
+        {
+            _currentFrame--;
+
+            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, duration));
         }
     }
 
     IEnumerator MoveOverSeconds(Transform objectToMove, Vector3 end, float seconds)
     {
-        ActivateButtons(false);
+        DisableButtons();
 
         _isMoving = true;
         float elapsedTime = 0;
@@ -45,14 +57,34 @@ public class FrameController : MonoBehaviour
         objectToMove.transform.position = end;
         _isMoving = false;
 
-        ActivateButtons(true);
+        EnableButtons();
     }
 
-    void ActivateButtons(bool value)
+    void DisableButtons()
     {
-        for(int i = 0; i < _input.Length; i++)
+        _right.gameObject.SetActive(false);
+        _left.gameObject.SetActive(false);
+    }
+
+    void EnableButtons()
+    {
+        if (_currentFrame == 0)
         {
-            _input[i].gameObject.SetActive(value);
+            _right.gameObject.SetActive(true);
+            _left.gameObject.SetActive(false);
+
+            return;
         }
+
+        if (_currentFrame == _frames.Length - 1)
+        {
+            _left.gameObject.SetActive(true);
+            _right.gameObject.SetActive(false);
+
+            return;
+        }
+
+        _left.gameObject.SetActive(true);
+        _right.gameObject.SetActive(true);
     }
 }
