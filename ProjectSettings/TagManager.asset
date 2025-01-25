@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Bubble
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: Arrow
     uniqueID: 1191600859
+    locked: 0
+  - name: Bubbles
+    uniqueID: 2579291137
     locked: 0
   m_RenderingLayers:
   - Default

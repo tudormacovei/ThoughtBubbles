@@ -35,7 +35,7 @@ public class BubbleManager : MonoBehaviour
     {
         BubbleList = new List<GameObject>();
         BubbleCount = 0;
-        SpawnPositions.OrderBy(go => -go.transform.position.y); // sort by y-position, negative so the values with the highest y are first
+        SpawnPositions = SpawnPositions.OrderBy(go => -go.transform.position.y).ToList(); // sort by y-position, negative so the values with the highest y are first
     }
 
     // Update is called once per frame
@@ -52,6 +52,8 @@ public class BubbleManager : MonoBehaviour
             AddBubble(position);
             BubbleCount--; // this is modified by the line above, we don't want that
 
+            Debug.Log("INDEX");
+            Debug.Log(position.y);
             Debug.Log("BubbleCount:");
             Debug.Log(BubbleCount);
             Debug.Log("BubbleList.Count:");
@@ -76,7 +78,7 @@ public class BubbleManager : MonoBehaviour
         Quaternion rotation = Quaternion.FromToRotation(from, to);
         Vector3 offset = new Vector3(0, 0, 10); // to ensure the sprite is visible
         var obj = Instantiate(BubbleClass, position + offset, rotation);
-        obj.transform.localScale *= Random.Range(0.6f, 1.0f);
+        obj.transform.localScale *= Random.Range(0.5f, 1.0f);
         
         BubbleCount++;
         BubbleList.Add(obj);

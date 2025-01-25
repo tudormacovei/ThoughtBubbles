@@ -17,6 +17,8 @@ public class ChoiceSelect : MonoBehaviour
     {
         ChoicesMade++;
         Debug.Log(Damage);
+
+
         DialogManager.Instance.InactivateDialog();
     }
 }
