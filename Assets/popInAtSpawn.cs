@@ -1,10 +1,18 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class popInAtSpawn : MonoBehaviour
 {
+    public float AnimDuration;
+    public List<CircleCollider2D> Colliders;
+    public GameObject Parent;
+
+    float endColliderSize;
+    float startColliderSize;
+    bool disabledExternalCollider;
     float lifetime;
-    public float animDuration;
     Vector3 startScale;
     Vector3 endScale;
 
@@ -19,10 +27,20 @@ public class popInAtSpawn : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        foreach (var collider in Colliders)
+        {
+            collider.enabled = false;
+        }
+        disabledExternalCollider = false;
+
         lifetime = 0.0f;
-        endScale = transform.localScale;
+        endScale = Parent.transform.localScale;
         startScale = new Vector3(0.1f, 0.1f, 0.1f);
-        transform.localScale = startScale;
+        Parent.transform.localScale = startScale;
+
+        endColliderSize = GetComponent<CircleCollider2D>().radius;
+        startColliderSize = 0.01f;
+        GetComponent<CircleCollider2D>().radius = startColliderSize;
     }
 
     // Update is called once per frame
@@ -30,8 +48,20 @@ public class popInAtSpawn : MonoBehaviour
     {
         if (lifetime <= 1)
         {
-            lifetime += Time.deltaTime * (1.0f / animDuration);
-            transform.localScale = Vector3.LerpUnclamped(startScale, endScale, BounceEffect(lifetime));
+            lifetime += Time.deltaTime * (1.0f / AnimDuration);
+            
+            Parent.transform.localScale = Vector3.LerpUnclamped(startScale, endScale, BounceEffect(lifetime));
+            GetComponent<CircleCollider2D>().radius = Mathf.Lerp(startColliderSize, endColliderSize, lifetime);
+        }
+        else if (!disabledExternalCollider)
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            foreach (var collider in Colliders)
+            {
+                collider.enabled = true;
+            }
+            disabledExternalCollider = true;
+            Debug.Log("Disabled external collider");
         }
     }
 }
