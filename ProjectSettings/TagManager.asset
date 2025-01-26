@@ -65,5 +65,8 @@ TagManager:
   - name: Crying
     uniqueID: 3473629145
     locked: 0
+  - name: BorderScene
+    uniqueID: 3258806539
+    locked: 0
   m_RenderingLayers:
   - Default
