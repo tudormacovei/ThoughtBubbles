@@ -16,6 +16,8 @@ public class BubbleManager : MonoBehaviour
     private int BubbleCount; // tracks the number of bubbles that still exist in the level, both spawned or unspawned
     public float SpawnDelay;
 
+    public bool IsSpawning;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -52,6 +54,7 @@ public class BubbleManager : MonoBehaviour
         }
         while (enabled)
         {
+            IsSpawning = true;
             Vector3 position = SpawnPositions[BubbleList.Count % SpawnPositions.Count].transform.position;
             AddBubble(position);
             BubbleCount--; // this is modified by the line above, we don't want that
@@ -59,6 +62,7 @@ public class BubbleManager : MonoBehaviour
             if (BubbleList.Count == BubbleCount)
             {
                 Debug.Log("Stopping coroutine...");
+                IsSpawning = false();
                 StopAllCoroutines();
                 yield break;
             }
@@ -122,7 +126,7 @@ public class BubbleManager : MonoBehaviour
     // Precondition: 
     public void AddExistingBubbles()
     {
-       if (BubbleList.Count != 0)
+        if (BubbleList.Count != 0)
        {
            Debug.Log("Attempted re-instantiation of bubbles with nonempty list. Aborting!");
            return;
@@ -157,12 +161,14 @@ public class BubbleManager : MonoBehaviour
 
     public IEnumerator HandleDamageAsync(int amount)
     {
+        IsSpawning = true;
         while (enabled)
         {
             Debug.Log("Amount of damage: " + amount.ToString());
             Vector3 position = SpawnPositions[BubbleList.Count % SpawnPositions.Count].transform.position;
             if (amount == 0)
             {
+                IsSpawning = false;
                 StopAllCoroutines();
                 yield break;
             }
