@@ -17,7 +17,7 @@ public class ItemInteraction : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (CatEvent.IsCutScene) return;
+        //if (CatEvent.IsCutScene) return;
 
         if (FrameController.Instance.Moving) return;
 
