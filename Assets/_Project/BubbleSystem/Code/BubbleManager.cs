@@ -62,7 +62,7 @@ public class BubbleManager : MonoBehaviour
             if (BubbleList.Count == BubbleCount)
             {
                 Debug.Log("Stopping coroutine...");
-                IsSpawning = false();
+                IsSpawning = false;
                 StopAllCoroutines();
                 yield break;
             }
