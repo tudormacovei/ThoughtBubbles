@@ -231,6 +231,14 @@ PrefabInstance:
       propertyPath: m_Distance
       value: 0.005
       objectReference: {fileID: 0}
+    - target: {fileID: 3400036033988049667, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
+      propertyPath: tex
+      value: 
+      objectReference: {fileID: 18700000, guid: 078f6e649bd2c504c93665a2d9181273, type: 3}
+    - target: {fileID: 3400036033988049667, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
+      propertyPath: frameCount
+      value: 44
+      objectReference: {fileID: 0}
     - target: {fileID: 3645639697369202026, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
       propertyPath: m_Name
       value: DeformingBubble

@@ -56,12 +56,6 @@ public class BubbleManager : MonoBehaviour
             AddBubble(position);
             BubbleCount--; // this is modified by the line above, we don't want that
 
-            Debug.Log("INDEX");
-            Debug.Log(position.y);
-            Debug.Log("BubbleCount:");
-            Debug.Log(BubbleCount);
-            Debug.Log("BubbleList.Count:");
-            Debug.Log(BubbleList.Count);
             if (BubbleList.Count == BubbleCount)
             {
                 Debug.Log("Stopping coroutine...");
@@ -154,5 +148,36 @@ public class BubbleManager : MonoBehaviour
             transform .position -= offset;
         }
         AddExistingBubbles();
+    }
+
+    public void HandleDamage(int amount)
+    {
+        StartCoroutine(HandleDamageAsync(amount));
+    }
+
+    public IEnumerator HandleDamageAsync(int amount)
+    {
+        while (enabled)
+        {
+            Debug.Log("Amount of damage: " + amount.ToString());
+            Vector3 position = SpawnPositions[BubbleList.Count % SpawnPositions.Count].transform.position;
+            if (amount == 0)
+            {
+                StopAllCoroutines();
+                yield break;
+            }
+            else if (amount > 0)
+            {
+                AddBubble(position);
+                amount--;
+            }
+            else
+            {
+                RemoveBubble();
+                amount++;
+            }
+
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 }

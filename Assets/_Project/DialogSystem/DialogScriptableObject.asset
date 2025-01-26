@@ -16,8 +16,8 @@ MonoBehaviour:
   - question: Do you like broccoli?
     choices:
     - Yes, I do. Yes, I do.
-    - No, I don't.
-    damageNumber: 0a000000fdffffff
+    - (Negative Damage)
+    damageNumber: 0a000000fcffffff
   - question: Do you like ice cream?
     choices:
     - Yes, I do. Yes, I do.
