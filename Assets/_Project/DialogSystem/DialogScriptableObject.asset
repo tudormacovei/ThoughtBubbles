@@ -17,7 +17,7 @@ MonoBehaviour:
     choices:
     - Yes, I do. Yes, I do.
     - No, I don't.
-    damageNumber: 0a00000003000000
+    damageNumber: 0a000000fdffffff
   - question: Do you like ice cream?
     choices:
     - Yes, I do. Yes, I do.

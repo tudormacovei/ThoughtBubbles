@@ -30,6 +30,8 @@ public class FrameController : Singleton<FrameController>
 
     int _currentFrame;
 
+    public int CurrrentFrame => _currentFrame;
+
     bool _isMoving;
 
     new void Awake()
