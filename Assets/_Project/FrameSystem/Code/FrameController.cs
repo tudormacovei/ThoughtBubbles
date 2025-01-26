@@ -34,6 +34,8 @@ public class FrameController : Singleton<FrameController>
 
     bool _isMoving;
 
+    public bool Moving => _isMoving;
+
     new void Awake()
     {
         _framefade = new SpriteRenderer[_frames.Length];

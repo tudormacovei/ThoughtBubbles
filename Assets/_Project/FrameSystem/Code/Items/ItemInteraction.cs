@@ -8,10 +8,23 @@ public class ItemInteraction : MonoBehaviour
     [SerializeField] SpriteRenderer _interactable;
     [SerializeField] SpriteRenderer _unInteractable;
 
+    Collider2D _col;
+
+    void Awake()
+    {
+        _col = GetComponent<Collider2D>();
+    }
+
     void OnMouseDown()
     {
+        if (FrameController.Instance.Moving) return;
+
+        _col.enabled = false;
+
         StartCoroutine(SpriteFade(_interactable, 0, FrameController.Instance.FadeInDuration));
         StartCoroutine(FrameController.SpriteFade(_unInteractable, 1, FrameController.Instance.FadeInDuration));
+
+        CatEvent.Instance.CountTrigger();
 
         DialogManager.Instance.SpawnDialog(_dialogIndex);
     }
