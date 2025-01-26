@@ -496,6 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2275240243274226359}
   - component: {fileID: 4818089270389883958}
+  - component: {fileID: 3400036033988049667}
   - component: {fileID: 560878833201551739}
   m_Layer: 6
   m_Name: DeformingBubble
@@ -543,7 +544,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -876546973899608171, guid: b3768cd8519dfce44ae0bbb95a8eb81f, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -575,6 +576,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3400036033988049667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3645639697369202026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6baa268804000d64ab9a4670ba812ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4818089270389883958}
+  val: 0
 --- !u!114 &560878833201551739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,7 +1447,7 @@ GameObject:
   - component: {fileID: 2138036883554772122}
   - component: {fileID: 9208029769940250536}
   - component: {fileID: 1218873893634897599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
