@@ -598,8 +598,13 @@ MonoBehaviour:
   - {fileID: 18700000, guid: 078f6e649bd2c504c93665a2d9181273, type: 3}
   - {fileID: 18700000, guid: c7d49f20901fa0f4e81859c5f29ff095, type: 3}
   - {fileID: 18700000, guid: 9e062d26062cff141ae0158943bd8036, type: 3}
+  tex_interior:
+  - {fileID: 18700000, guid: 77ff0417f0150a346ae3b6146c1d4884, type: 3}
+  - {fileID: 18700000, guid: 3165684f3b73d4d488ca87b3fbb08775, type: 3}
+  - {fileID: 18700000, guid: 77ff0417f0150a346ae3b6146c1d4884, type: 3}
+  - {fileID: 18700000, guid: 77ff0417f0150a346ae3b6146c1d4884, type: 3}
   AnimationIndex: 0
-  RandomizeAnimation: 0
+  RandomizeAnimation: 1
 --- !u!114 &560878833201551739
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class BubbleMaterialSetup : MonoBehaviour
 {
     public List<float> frameCount;
     public List<Texture2DArray> tex;
+    public List<Texture2DArray> tex_interior;
 
     [SerializeField, Range(0, 3)]
     public int AnimationIndex;
@@ -34,6 +35,7 @@ public class BubbleMaterialSetup : MonoBehaviour
         properties.SetFloat("_Frames", frameCount[idx]);
         properties.SetFloat("_StartTime", Random.Range(0.0f, 4.0f));
         properties.SetTexture("_Anim", tex[idx]);
+        properties.SetTexture("_AnimInt", tex_interior[idx]);
 
         // Apply the property block to the renderer
         GetComponent<Renderer>().SetPropertyBlock(properties);
