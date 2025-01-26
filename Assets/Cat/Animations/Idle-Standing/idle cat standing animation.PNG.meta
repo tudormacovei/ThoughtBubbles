@@ -1,0 +1,339 @@
+fileFormatVersion: 2
+guid: f0e1619a1e692cf48bc76d8393d8f4c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 881250905638089054
+    second: idle cat standing animation_0
+  - first:
+      213: 5041938947510846697
+    second: idle cat standing animation_1
+  - first:
+      213: 6505106244598316894
+    second: idle cat standing animation_2
+  - first:
+      213: -2096696672854030590
+    second: idle cat standing animation_3
+  - first:
+      213: 6928898723282409498
+    second: idle cat standing animation_4
+  - first:
+      213: -8781184846605944220
+    second: idle cat standing animation_5
+  - first:
+      213: 288766113245532544
+    second: idle cat standing animation_6
+  - first:
+      213: -2586611613442615291
+    second: idle cat standing animation_7
+  - first:
+      213: -6914630872354820499
+    second: idle cat standing animation_8
+  - first:
+      213: 774281984683855715
+    second: idle cat standing animation_9
+  - first:
+      213: -8150368127683953590
+    second: idle cat standing animation_10
+  - first:
+      213: 2878667771225584581
+    second: idle cat standing animation_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: idle cat standing animation_0
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1906
+        width: 1053
+        height: 1663
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e51bc849705da3c00800000000000000
+      internalID: 881250905638089054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle cat standing animation_1
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 1906
+        width: 994
+        height: 1676
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e4479962c098f540800000000000000
+      internalID: 5041938947510846697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle cat standing animation_2
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 1906
+        width: 943
+        height: 1695
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207cacc1c7907e2e0800000000000000
+      internalID: -2096696672854030590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle cat standing animation_3
+      rect:
+        serializedVersion: 2
+        x: 3562
+        y: 1906
+        width: 911
+        height: 1686
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18d7ed8da4682060800000000000000
+      internalID: 6928898723282409498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle cat standing animation_4
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 213
+        width: 869
+        height: 1686
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0819b230047e10400800000000000000
+      internalID: 288766113245532544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle cat standing animation_5
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 212
+        width: 911
+        height: 1689
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5085ad821728a1cd0800000000000000
+      internalID: -2586611613442615291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle cat standing animation_6
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 213
+        width: 943
+        height: 1697
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c7bb0de5314ee80800000000000000
+      internalID: -8150368127683953590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle cat standing animation_7
+      rect:
+        serializedVersion: 2
+        x: 3479
+        y: 212
+        width: 994
+        height: 1676
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c3344a061513f720800000000000000
+      internalID: 2878667771225584581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ed83d2d0431acb748b277ac68ef1b310
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      idle cat standing animation_0: 881250905638089054
+      idle cat standing animation_1: 5041938947510846697
+      idle cat standing animation_2: -2096696672854030590
+      idle cat standing animation_3: 6928898723282409498
+      idle cat standing animation_4: 288766113245532544
+      idle cat standing animation_5: -2586611613442615291
+      idle cat standing animation_6: -8150368127683953590
+      idle cat standing animation_7: 2878667771225584581
+      idle cat standing animation_8: -6914630872354820499
+      idle cat standing animation_9: 774281984683855715
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
