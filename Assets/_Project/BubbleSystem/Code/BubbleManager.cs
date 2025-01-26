@@ -16,6 +16,9 @@ public class BubbleManager : MonoBehaviour
     private int BubbleCount; // tracks the number of bubbles that still exist in the level, both spawned or unspawned
     public float SpawnDelay;
 
+    [SerializeField]
+    PlayCutscene _endScene;
+
     public bool IsSpawning;
 
     private void Awake()
@@ -73,6 +76,12 @@ public class BubbleManager : MonoBehaviour
     // Spawns a bubble with the specified world-space location, with a random rotation
     public void AddBubble(Vector3 position)
     {
+        if (BubbleCount >= SpawnPositions.Count)
+        {
+            _endScene.PlayVideo();
+            return;
+        }
+
         var from = Random.onUnitSphere;
         var to = Random.onUnitSphere;
         from.z = 0.0f;
@@ -162,12 +171,17 @@ public class BubbleManager : MonoBehaviour
     public IEnumerator HandleDamageAsync(int amount)
     {
         IsSpawning = true;
+
+        FrameController.Instance.DisableButtons();
+
         while (enabled)
         {
             Debug.Log("Amount of damage: " + amount.ToString());
             Vector3 position = SpawnPositions[BubbleList.Count % SpawnPositions.Count].transform.position;
             if (amount == 0)
             {
+                FrameController.Instance.EnableButtons();
+
                 IsSpawning = false;
                 StopAllCoroutines();
                 yield break;

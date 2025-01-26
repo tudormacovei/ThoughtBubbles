@@ -26,6 +26,8 @@ public class ItemInteraction : MonoBehaviour
         StartCoroutine(SpriteFade(_interactable, 0, FrameController.Instance.FadeInDuration));
         StartCoroutine(FrameController.SpriteFade(_unInteractable, 1, FrameController.Instance.FadeInDuration));
 
+        FrameController.Instance.DisableButtons();
+
         CatEvent.Instance.CountTrigger();
 
         DialogManager.Instance.SpawnDialog(_dialogIndex);
