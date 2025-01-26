@@ -59,6 +59,8 @@ public class FrameController : Singleton<FrameController>
 
     public void MoveNext()
     {
+        if (CatEvent.IsCutScene) return;
+
         if (_currentFrame == _frames.Length - 1) return;
 
         int previousFrame = _currentFrame;

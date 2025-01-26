@@ -4,6 +4,8 @@ using System.Collections;
 
 public class CatEvent : Singleton<CatEvent>
 {
+    public static bool IsCutScene = false;
+
     [SerializeField] 
     int TriggerThreshold;
 
@@ -31,17 +33,20 @@ public class CatEvent : Singleton<CatEvent>
 
         if (TriggerCounter >= TriggerThreshold)
         {
+            IsCutScene = true;
             StartCoroutine(CatDiesEvent());
         }
     }
 
     IEnumerator CatDiesEvent()
     {
-        StartCoroutine(FrameController.SpriteFade(_cat, 0, 4));
-
         _anim.SetBool("IsDead", true);
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
+
+        StartCoroutine(FrameController.SpriteFade(_cat, 0, 4));
+
+        yield return new WaitForSeconds(2);
 
         _anim.SetBool("IsGhost", true);
 
@@ -71,5 +76,6 @@ public class CatEvent : Singleton<CatEvent>
         yield return new WaitForSeconds(5);
 
         _cat.gameObject.SetActive(false);
+        IsCutScene = false;
     }
 }
