@@ -5,7 +5,6 @@ public class PlayCutscene : MonoBehaviour
 {
     public VideoPlayer videoPlayer; // Assign your VideoPlayer in the Inspector
     public GameObject videoSquare; // The square displaying the video
-    public KeyCode triggerKey = KeyCode.P; // Key to trigger the video playback
 
     void Start()
     {
@@ -17,15 +16,7 @@ public class PlayCutscene : MonoBehaviour
         videoPlayer.loopPointReached += OnVideoEnd;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(triggerKey))
-        {
-            PlayVideo();
-        }
-    }
-
-    void PlayVideo()
+    public void PlayVideo()
     {
         videoSquare.SetActive(true);
         videoPlayer.Play();

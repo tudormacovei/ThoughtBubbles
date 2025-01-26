@@ -17,6 +17,9 @@ public class CatEvent : Singleton<CatEvent>
     SpriteRenderer _cat;
 
     [SerializeField]
+    PlayCutscene _cutscene;
+
+    [SerializeField]
     float _time;
 
     [SerializeField]
@@ -38,9 +41,11 @@ public class CatEvent : Singleton<CatEvent>
 
         _anim.SetBool("IsDead", true);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
 
         _anim.SetBool("IsGhost", true);
+
+        transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 
         StartCoroutine(FrameController.SpriteFade(_cat, 1f, 2));
 
@@ -60,6 +65,10 @@ public class CatEvent : Singleton<CatEvent>
         }
         objectToMove.transform.position = end;
         objectToMove.transform.position = new Vector3(objectToMove.transform.position.x, objectToMove.transform.position.y, 0);
+
+        _cutscene.PlayVideo();
+
+        yield return new WaitForSeconds(5);
 
         _cat.gameObject.SetActive(false);
     }
