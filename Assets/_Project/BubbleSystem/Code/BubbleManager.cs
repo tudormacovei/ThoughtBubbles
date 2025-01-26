@@ -78,6 +78,7 @@ public class BubbleManager : MonoBehaviour
     {
         if (BubbleCount >= SpawnPositions.Count)
         {
+            _endScene.transform.GetChild(0).position = FrameController.Instance.transform.position;
             _endScene.PlayVideo();
             return;
         }

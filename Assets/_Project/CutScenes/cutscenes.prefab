@@ -149,11 +149,11 @@ Transform:
   m_GameObject: {fileID: 2507804929552748521}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9790392, y: 0.06450711, z: -0.0012616855}
+  m_LocalPosition: {x: -1.8907999, y: 0.020799786, z: 0}
   m_LocalScale: {x: 3.581149, y: 9.819439, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8708810433902680322}
+  m_Father: {fileID: 6877756861537228169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2515781401437930025
 SpriteRenderer:
@@ -274,7 +274,8 @@ Transform:
   m_LocalPosition: {x: -0.08823931, y: 0.043707326, z: -0.0012616855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8184462700100770004}
   m_Father: {fileID: 8708810433902680322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5727207345059464988
@@ -291,7 +292,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 3668807457845253922}
   videoSquare: {fileID: 2489966546448568915}
-  triggerKey: 112
 --- !u!114 &4027398992632818595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +306,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2637242708561036410}
   videoSquare: {fileID: 2507804929552748521}
-  triggerKey: 111
 --- !u!1 &6690931078782354329
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +336,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6877756861537228169}
-  - {fileID: 8184462700100770004}
   - {fileID: 4731412482338975758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
