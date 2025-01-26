@@ -19,14 +19,14 @@ public class popInAtSpawn : MonoBehaviour
     Vector3 endScale;
 
     // the value of this function is a bounce effect, as the variable x goes from 0 to 1
-    float BounceEffect(float x)
+    public static float BounceEffect(float x)
     {
         float a = Mathf.Sin(3.0f * x);
         float b = Mathf.Sin(5.0f * x - 3.0f) + 0.09f;
         return Mathf.Max(a, b);
     }
 
-    float BounceOutEffect(float x)
+    public static float BounceOutEffect(float x)
     {
         float a = Mathf.Sin(1.2f * x + 1.5f);
         float b = Mathf.Pow(x, 3.0f) - 0.1f;

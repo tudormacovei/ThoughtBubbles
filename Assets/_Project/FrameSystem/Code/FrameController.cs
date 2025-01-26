@@ -117,6 +117,8 @@ public class FrameController : Singleton<FrameController>
         _isMoving = true;
         float elapsedTime = 0;
         Vector3 startingPos = objectToMove.transform.position;
+
+        GetComponent<CapsuleCollider2D>().enabled = false;
         while (elapsedTime < seconds)
         {
             objectToMove.transform.position = Vector3.Lerp(startingPos, end, elapsedTime / seconds);
@@ -124,6 +126,9 @@ public class FrameController : Singleton<FrameController>
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        GetComponent<CapsuleCollider2D>().enabled = true;
+        GetComponent<PopInPopOutCollider>().StartPopping();
+
         objectToMove.transform.position = end;
         objectToMove.transform.position = new Vector3(objectToMove.transform.position.x, objectToMove.transform.position.y, 0);
         _isMoving = false;
