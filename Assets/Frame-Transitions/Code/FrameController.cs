@@ -72,6 +72,7 @@ public class FrameController : Singleton<FrameController>
             StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, fadeInDuration));
 
             StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, moveDuration));
+            StartCoroutine(BubbleManager.Instance.Move(true));
         }
     }
 
@@ -94,6 +95,8 @@ public class FrameController : Singleton<FrameController>
             StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, fadeInDuration));
 
             StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, moveDuration));
+            
+            StartCoroutine(BubbleManager.Instance.Move(false)); // move bubbles along
         }
     }
 
