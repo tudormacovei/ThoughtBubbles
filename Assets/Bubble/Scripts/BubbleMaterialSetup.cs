@@ -14,7 +14,6 @@ public class BubbleMaterialSetup : MonoBehaviour
 
         // Set random values
         properties.SetFloat("_StartTime", Random.Range(0.0f, 4.0f));
-        properties.SetFloat("_TimeMulti", Random.Range(0.6f, 1.0f));
 
         // Apply the property block to the renderer
         GetComponent<Renderer>().SetPropertyBlock(properties);
@@ -23,14 +22,6 @@ public class BubbleMaterialSetup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //MaterialPropertyBlock properties = new();
-        //GetComponent<Renderer>().GetPropertyBlock(properties);
 
-        //// Set random values
-        //properties.SetFloat("_StartTime", Random.Range(0.0f, 4.0f));
-        //properties.SetFloat("_TimeMulti", Random.Range(0.6f, 1.0f));
-
-        //// Apply the property block to the renderer
-        //GetComponent<Renderer>().SetPropertyBlock(properties);
     }
 }

@@ -60,7 +60,7 @@ public class DialogManager : MonoBehaviour
 
         for (int i = 0; i < choicesLength; i++)
         {
-            GameObject choice = GetChoice(dialogScriptableObject.dialogDatas[i].damageNumber[i]);
+            GameObject choice = GetChoice(dialogScriptableObject.dialogDatas[dialogNum].damageNumber[i]);
 
             choice.GetComponentInChildren<TMP_Text>().text = dialogScriptableObject.dialogDatas[dialogNum].choices[i];
 
