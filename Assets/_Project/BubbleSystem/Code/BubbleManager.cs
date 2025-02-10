@@ -167,6 +167,7 @@ public class BubbleManager : MonoBehaviour
 
     public void HandleDamage(int amount)
     {
+        // this function exists to bind the coroutine below to this object
         StartCoroutine(HandleDamageAsync(amount));
     }
 
@@ -195,6 +196,10 @@ public class BubbleManager : MonoBehaviour
             }
             else
             {
+                if (BubbleCount <= 0)
+                {
+                    yield break;
+                }
                 RemoveBubble();
                 amount++;
             }

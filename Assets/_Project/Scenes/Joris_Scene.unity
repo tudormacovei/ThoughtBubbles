@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 5
   _interactable: {fileID: 96808906}
   _unInteractable: {fileID: 1364579052}
 --- !u!1 &173650552
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 8
   _interactable: {fileID: 1890996727}
   _unInteractable: {fileID: 1083511558}
 --- !u!61 &173650555
@@ -2225,7 +2225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 6
   _interactable: {fileID: 1661484281}
   _unInteractable: {fileID: 790337729}
 --- !u!1 &667981325
@@ -2326,6 +2326,7 @@ GameObject:
   - component: {fileID: 691279241}
   - component: {fileID: 691279242}
   - component: {fileID: 691279243}
+  - component: {fileID: 691279244}
   m_Layer: 0
   m_Name: PlayerHandle
   m_TagString: Untagged
@@ -2416,6 +2417,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.13398409, y: -1.8252134}
   m_Size: {x: 0.7947426, y: 4.5715084}
   m_Direction: 0
+--- !u!114 &691279244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691279239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd15432a42c6b84e896e77d9a7e95bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimDuration: 1
+  Collider: {fileID: 691279243}
 --- !u!4 &703927804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8184462700100770004, guid: ee563bf5e93ba63428a0a7b782f1f39a, type: 3}
@@ -2775,7 +2790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 1
   _interactable: {fileID: 732375733}
   _unInteractable: {fileID: 159027345}
 --- !u!1 &864475366
@@ -2999,7 +3014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 2
   _interactable: {fileID: 440463652}
   _unInteractable: {fileID: 1311202950}
 --- !u!61 &919876281
@@ -3529,7 +3544,7 @@ PrefabInstance:
       objectReference: {fileID: 1403330757}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: choiceAnimOffset
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: questionPositionOffset.x
@@ -3537,7 +3552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: questionPositionOffset.y
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: activeChoiceList.Array.size
@@ -3662,7 +3677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 3
   _interactable: {fileID: 136107185}
   _unInteractable: {fileID: 864475368}
 --- !u!1 &1311202948
@@ -4367,7 +4382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 9
   _interactable: {fileID: 1538794212}
   _unInteractable: {fileID: 1869343699}
 --- !u!61 &1595479329
@@ -5271,7 +5286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 10
   _interactable: {fileID: 1875105834}
   _unInteractable: {fileID: 878109398}
 --- !u!1 &1988199039
@@ -5456,7 +5471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 6
   _interactable: {fileID: 63479831}
   _unInteractable: {fileID: 1754885367}
 --- !u!1 &2042726667
@@ -5552,7 +5567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 0
+  _dialogIndex: 4
   _interactable: {fileID: 1071982891}
   _unInteractable: {fileID: 210730217}
 --- !u!1 &2143787570

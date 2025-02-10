@@ -33,32 +33,32 @@ MonoBehaviour:
     choices:
     - I guess, I'll make an easy sandwitch
     - Something fancy
-    damageNumber: 02000000ffffffff
+    damageNumber: 04000000fdffffff
   - question: Should I take my pills or make some tea?
     choices:
     - Make tea
     - Take pills
-    damageNumber: 02000000ffffffff
+    damageNumber: 04000000fcffffff
   - question: You are not sure how to take care of the plant... it looks dry
     choices:
     - Give it lots of water
     - Give it a little bit of water
-    damageNumber: 0200000001000000
+    damageNumber: 04000000ffffffff
   - question: You haven't showered in a few days because the shower is broken
     choices:
     - Call someone to fix it
     - Shower at the neighbours
-    damageNumber: 0300000003000000
+    damageNumber: fffffffffeffffff
   - question: I'm not going out today....
     choices:
     - Don't brush your teeth
     - Brush your teeth
-    damageNumber: 03000000ffffffff
+    damageNumber: 03000000feffffff
   - question: Haha Bubbles in a clown costume.. so cute!~ I remember this day
     choices:
     - Look around
     - Recall the memory
-    damageNumber: 01000000ffffffff
+    damageNumber: 03000000feffffff
   - question: I'm feeling nauseous... I don't think I can't drink or eat anything
     choices:
     - I don't want to drink water
