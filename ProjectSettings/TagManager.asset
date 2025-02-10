@@ -68,5 +68,8 @@ TagManager:
   - name: BorderScene
     uniqueID: 3258806539
     locked: 0
+  - name: UI
+    uniqueID: 1444317341
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -52,7 +52,8 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(playerTransform.position);
+        // not necessary, the dialogManager is responsible for its own position now
+        // GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(playerTransform.position);
 
         SpawnQuestion(dialogNum);
 
@@ -98,6 +99,19 @@ public class DialogManager : MonoBehaviour
             ReleaseChoice(choice);
         }
         activeChoiceList.Clear();
+    }
+
+    public void Move(bool moveRight)
+    {
+        Vector3 offset = new Vector3(4.0f, 0.0f, 0.0f);
+        if (moveRight)
+        {
+            transform.position += offset;
+        }
+        else
+        {
+            transform.position -= offset;
+        }
     }
 
     #region Pooling Choice Object 

@@ -147,13 +147,14 @@ public class BubbleManager : MonoBehaviour
        StartCoroutine(SpawnBubblesRoutine());
     }
 
-    public IEnumerator Move(bool moveNext)
+    public IEnumerator Move(bool moveRight)
     {
         RemoveAllBubbles();
         yield return new WaitForSeconds(0.7f);
 
+        DialogManager.Instance.Move(moveRight);
         Vector3 offset = new Vector3(4.0f, 0.0f, 0.0f);
-        if (moveNext)
+        if (moveRight)
         {
             transform.position += offset;
         }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4753315781837345537}
   - component: {fileID: 8290040092106380099}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DialogManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,8 +33,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 362.88, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 4, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8290040092106380099
 MonoBehaviour:
@@ -54,6 +54,6 @@ MonoBehaviour:
   activeChoiceList: []
   questionPrefab: {fileID: 5661567841368590745, guid: fb83b65daf5262244a470cc0760c3201, type: 3}
   question: {fileID: 0}
-  questionPositionOffset: {x: 300, y: 300}
+  questionPositionOffset: {x: 0, y: 0}
   playerTransform: {fileID: 0}
   myNum: 2
