@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2682215819013501631}
   - component: {fileID: 1614407166530146507}
-  - component: {fileID: 8704107312966030264}
   m_Layer: 0
   m_Name: BubbleManager
   m_TagString: Untagged
@@ -78,18 +77,9 @@ MonoBehaviour:
   - {fileID: 4568285675523496571}
   - {fileID: 2880103336888921791}
   SpawnDelay: 0.08
---- !u!114 &8704107312966030264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901486265954021661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 856ff13c5c5ec1a42b19fc56b96b0c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _endScene: {fileID: 0}
+  IsSpawning: 0
+  CatPopCooldown: 0
 --- !u!1 &1200602819707677997
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ public class BubbleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        TimeSinceCatPop += Time.deltaTime;
     }
 
     IEnumerator SpawnBubblesRoutine()
@@ -76,6 +76,7 @@ public class BubbleManager : MonoBehaviour
     // Spawns a bubble with the specified world-space location, with a random rotation
     public void AddBubble(Vector3 position)
     {
+        // if there are more bubbles spawned than can fit on the screen, end game
         if (BubbleCount >= SpawnPositions.Count)
         {
             _endScene.transform.GetChild(0).position = FrameController.Instance.transform.position;
@@ -111,6 +112,10 @@ public class BubbleManager : MonoBehaviour
     // removes a bubble from a random location
     public void RemoveBubble()
     {
+        if (BubbleCount <= 0)
+        {
+            return;
+        }
         RemoveBubble(RandomBubbleIndex());
     }
 
@@ -133,7 +138,6 @@ public class BubbleManager : MonoBehaviour
     }
 
     // Re-Add bubbles that existed before, based on BubbleCount
-    // Precondition: 
     public void AddExistingBubbles()
     {
         if (BubbleList.Count != 0)
@@ -206,5 +210,18 @@ public class BubbleManager : MonoBehaviour
 
             yield return new WaitForSeconds(0.2f);
         }
+    }
+
+    [SerializeField] private float CatPopCooldown;
+    private float TimeSinceCatPop = 0.0f;
+
+    public void PopClick(int index)
+    {
+        if (TimeSinceCatPop >= CatPopCooldown)
+        {
+            return;
+        }
+        RemoveBubble(index);
+        TimeSinceCatPop = 0.0f;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CatInteraction : MonoBehaviour
 {
@@ -11,18 +12,26 @@ public class CatInteraction : MonoBehaviour
 
     [SerializeField] Collider2D _col;
 
-    void OnMouseDown()
-    {
-        _anim.SetBool("IsPetting", true);
-        _col.enabled = false;
-
-        StartCoroutine(DelaySpawnDialog(_delay, _dialogIndex));
-    }
-
     IEnumerator DelaySpawnDialog(float seconds, int dialogIndex)
     {
         yield return new WaitForSeconds(seconds);
         DialogManager.Instance.SpawnDialog(dialogIndex);
         _anim.SetBool("IsPetting", false);
+    }
+
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            _anim.SetBool("IsPetting", true);
+            _col.enabled = false;
+
+            StartCoroutine(DelaySpawnDialog(_delay, _dialogIndex));
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            BubbleManager.Instance.RemoveBubble();
+        }
+
     }
 }
