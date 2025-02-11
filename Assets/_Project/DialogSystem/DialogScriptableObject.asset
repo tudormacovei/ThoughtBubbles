@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135adcf2c300c2340b9929affdfecb80, type: 3}
+  m_Name: DialogScriptableObject
+  m_EditorClassIdentifier: 
+  dialogDatas:
+  - question: You forgot to turn off the tv.. it's nice to keep some sound in the
+      background
+    choices:
+    - Turn the tv off
+    - Keep it on
+    damageNumber: 03000000ffffffff
+  - question: There is a funny video on the television... watch some more tv?
+    choices:
+    - No
+    - Yes
+    damageNumber: 03000000ffffffff
+  - question: You hate the sounds of alarms... and you love sleep
+    choices:
+    - Sleep as long as you want
+    - Set an alarm for the next day
+    damageNumber: 0500000003000000
+  - question: What do you want to make for breakfast
+    choices:
+    - I guess, I'll make an easy sandwitch
+    - Something fancy
+    damageNumber: 04000000fdffffff
+  - question: Should I take my pills or make some tea?
+    choices:
+    - Make tea
+    - Take pills
+    damageNumber: 04000000fcffffff
+  - question: You are not sure how to take care of the plant... it looks dry
+    choices:
+    - Give it lots of water
+    - Give it a little bit of water
+    damageNumber: 04000000ffffffff
+  - question: You haven't showered in a few days because the shower is broken
+    choices:
+    - Call someone to fix it
+    - Shower at the neighbours
+    damageNumber: fffffffffeffffff
+  - question: I'm not going out today....
+    choices:
+    - Don't brush your teeth
+    - Brush your teeth
+    damageNumber: 03000000feffffff
+  - question: Haha Bubbles in a clown costume.. so cute!~ I remember this day
+    choices:
+    - Look around
+    - Recall the memory
+    damageNumber: 03000000feffffff
+  - question: I'm feeling nauseous... I don't think I can't drink or eat anything
+    choices:
+    - I don't want to drink water
+    - Still drink some water
+    damageNumber: 01000000ffffffff
+  - question: I don't feel very pretty today..
+    choices:
+    - Don't look at yourself
+    - Stare in the mirror
+    damageNumber: 0300000005000000
+  - question: You want to ask your friend to hang out this week
+    choices:
+    - Stay at home
+    - Text them
+    damageNumber: 02000000ffffffff
+  - question: Bubble looks at you with his big eyes
+    choices:
+    - Smile at Bubble
+    - Pet Bubble
+    damageNumber: fffffffffeffffff

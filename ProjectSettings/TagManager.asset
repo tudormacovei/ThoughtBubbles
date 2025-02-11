@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Bubble
   - 
   - 
   - 
@@ -41,3 +41,35 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Frame
+    uniqueID: 2160570525
+    locked: 0
+  - name: Item
+    uniqueID: 2354884109
+    locked: 0
+  - name: Player
+    uniqueID: 2451537159
+    locked: 0
+  - name: Cat
+    uniqueID: 2048849147
+    locked: 0
+  - name: Border
+    uniqueID: 3926918343
+    locked: 0
+  - name: Arrow
+    uniqueID: 1191600859
+    locked: 0
+  - name: Bubbles
+    uniqueID: 2579291137
+    locked: 0
+  - name: Crying
+    uniqueID: 3473629145
+    locked: 0
+  - name: BorderScene
+    uniqueID: 3258806539
+    locked: 0
+  - name: UI
+    uniqueID: 1444317341
+    locked: 0
+  m_RenderingLayers:
+  - Default
