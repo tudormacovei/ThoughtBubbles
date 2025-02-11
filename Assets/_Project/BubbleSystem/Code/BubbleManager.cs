@@ -224,4 +224,9 @@ public class BubbleManager : MonoBehaviour
         RemoveBubble(index);
         TimeSinceCatPop = 0.0f;
     }
+    
+    public int GetBubbleCount()
+    {
+        return BubbleCount;
+    }
 }
