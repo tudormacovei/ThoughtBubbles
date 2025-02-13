@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a609f33e9263b4f99519c0a7a9e746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleClass: {fileID: 1868335659319081312, guid: 3c11999c0c7bd6c43919adc2c9953b91, type: 3}
+  BubbleClass: {fileID: 3645639697369202026, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
   SpawnPositions:
   - {fileID: 6891187059283629343}
   - {fileID: 5835800238698006427}

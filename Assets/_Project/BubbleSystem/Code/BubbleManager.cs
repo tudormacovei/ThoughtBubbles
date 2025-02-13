@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using static UnityEditor.PlayerSettings;
 
 public class BubbleManager : MonoBehaviour
@@ -94,6 +95,20 @@ public class BubbleManager : MonoBehaviour
         
         BubbleCount++;
         BubbleList.Add(obj);
+    }
+
+    // Precondition: 0 <= index < BubbleCount
+    public Vector3 GetBubblePosition(int index)
+    {
+        foreach (Transform transform in BubbleList[index].transform)
+        {
+            if (transform.CompareTag("BubbleCenter"))
+            {
+                return transform.position;
+            }
+        }
+        Debug.Log("Could not find bubble transform!");
+        return Vector3.zero;
     }
 
     public int RandomBubbleIndex()

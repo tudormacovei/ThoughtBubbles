@@ -1704,6 +1704,7 @@ MonoBehaviour:
   _delay: 2
   _anim: {fileID: 458239863}
   _col: {fileID: 359886386}
+  _popText: {fileID: 290523887}
 --- !u!61 &359886386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3344,6 +3345,7 @@ MonoBehaviour:
   _delay: 2
   _anim: {fileID: 610659500}
   _col: {fileID: 755604834}
+  _popText: {fileID: 0}
 --- !u!114 &755604837
 MonoBehaviour:
   m_ObjectHideFlags: 0
