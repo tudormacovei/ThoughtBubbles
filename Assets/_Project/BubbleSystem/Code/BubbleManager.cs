@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using static UnityEditor.PlayerSettings;
 
 public class BubbleManager : MonoBehaviour
@@ -46,7 +47,7 @@ public class BubbleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        TimeSinceCatPop += Time.deltaTime;
     }
 
     IEnumerator SpawnBubblesRoutine()
@@ -76,6 +77,7 @@ public class BubbleManager : MonoBehaviour
     // Spawns a bubble with the specified world-space location, with a random rotation
     public void AddBubble(Vector3 position)
     {
+        // if there are more bubbles spawned than can fit on the screen, end game
         if (BubbleCount >= SpawnPositions.Count)
         {
             _endScene.transform.GetChild(0).position = FrameController.Instance.transform.position;
@@ -95,6 +97,20 @@ public class BubbleManager : MonoBehaviour
         BubbleList.Add(obj);
     }
 
+    // Precondition: 0 <= index < BubbleCount
+    public Vector3 GetBubblePosition(int index)
+    {
+        foreach (Transform transform in BubbleList[index].transform)
+        {
+            if (transform.CompareTag("BubbleCenter"))
+            {
+                return transform.position;
+            }
+        }
+        Debug.Log("Could not find bubble transform!");
+        return Vector3.zero;
+    }
+
     public int RandomBubbleIndex()
     {
         return Mathf.RoundToInt(Random.Range(0.0f, (float)BubbleList.Count - 1.0f));
@@ -111,6 +127,10 @@ public class BubbleManager : MonoBehaviour
     // removes a bubble from a random location
     public void RemoveBubble()
     {
+        if (BubbleCount <= 0)
+        {
+            return;
+        }
         RemoveBubble(RandomBubbleIndex());
     }
 
@@ -133,7 +153,6 @@ public class BubbleManager : MonoBehaviour
     }
 
     // Re-Add bubbles that existed before, based on BubbleCount
-    // Precondition: 
     public void AddExistingBubbles()
     {
         if (BubbleList.Count != 0)
@@ -166,7 +185,7 @@ public class BubbleManager : MonoBehaviour
     }
 
     public void HandleDamage(int amount)
-    {
+    {     
         // this function exists to bind the coroutine below to this object
         StartCoroutine(HandleDamageAsync(amount));
     }
@@ -179,7 +198,7 @@ public class BubbleManager : MonoBehaviour
 
         while (enabled)
         {
-            Debug.Log("Amount of damage: " + amount.ToString());
+            Debug.Log("Amount of damage left to deal: " + amount.ToString());
             Vector3 position = SpawnPositions[BubbleList.Count % SpawnPositions.Count].transform.position;
             if (amount == 0)
             {
@@ -198,6 +217,10 @@ public class BubbleManager : MonoBehaviour
             {
                 if (BubbleCount <= 0)
                 {
+                    FrameController.Instance.EnableButtons();
+
+                    IsSpawning = false;
+                    StopAllCoroutines();
                     yield break;
                 }
                 RemoveBubble();
@@ -206,5 +229,23 @@ public class BubbleManager : MonoBehaviour
 
             yield return new WaitForSeconds(0.2f);
         }
+    }
+
+    [SerializeField] private float CatPopCooldown;
+    private float TimeSinceCatPop = 0.0f;
+
+    public void PopClick(int index)
+    {
+        if (TimeSinceCatPop >= CatPopCooldown)
+        {
+            return;
+        }
+        RemoveBubble(index);
+        TimeSinceCatPop = 0.0f;
+    }
+    
+    public int GetBubbleCount()
+    {
+        return BubbleCount;
     }
 }

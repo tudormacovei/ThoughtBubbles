@@ -11,10 +11,6 @@ public class SpawnBubbleOnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            BubbleManager.Instance.AddBubble(pos);
-        }
+
     }
 }

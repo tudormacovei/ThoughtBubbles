@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4818089270389883958, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5218309664783899026, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
       propertyPath: m_Distance
@@ -342,6 +342,10 @@ PrefabInstance:
     - target: {fileID: 6537928628838282016, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537928628838282016, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
+      propertyPath: m_TagString
+      value: BubbleCenter
       objectReference: {fileID: 0}
     - target: {fileID: 6663052306274744293, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
       propertyPath: m_Distance
