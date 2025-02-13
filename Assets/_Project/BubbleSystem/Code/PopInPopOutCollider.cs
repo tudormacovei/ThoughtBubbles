@@ -5,48 +5,47 @@ using UnityEngine;
 
 public class PopInPopOutCollider : MonoBehaviour
 {
-    public float AnimDuration;
+    [SerializeField] float _animDuration;
+    [SerializeField] CapsuleCollider2D _collider;
 
-    public CapsuleCollider2D Collider;
-
-    Vector2 endColliderSize;
-    Vector2 startColliderSize;
+    Vector2 _endColliderSize;
+    Vector2 _startColliderSize;
     
-    bool isPopping;
-    float lifetime;
+    bool _isPopping;
+    float _lifetime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        lifetime = 2.0f;
-        endColliderSize = Collider.size;
-        startColliderSize = new Vector2(0.1f, 0.1f);
+        _lifetime = 2.0f;
+        _endColliderSize = _collider.size;
+        _startColliderSize = new Vector2(0.1f, 0.1f);
         
-        isPopping = false;
+        _isPopping = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isPopping)
+        if (_isPopping)
         {
-            lifetime += Time.deltaTime * (1.0f / AnimDuration);
+            _lifetime += Time.deltaTime * (1.0f / _animDuration);
         }
 
-        if (lifetime <= 1)
+        if (_lifetime <= 1)
         {
-            Collider.size = Vector2.LerpUnclamped(startColliderSize, endColliderSize, popInAtSpawn.BounceEffect(lifetime));
+            _collider.size = Vector2.LerpUnclamped(_startColliderSize, _endColliderSize, PopInAtSpawn.BounceEffect(_lifetime));
         }
         else
         {
-            isPopping = false;
+            _isPopping = false;
         }
     }
 
     public void StartPopping()
     {
-        lifetime = 0.0f;
-        isPopping = true;
-        Collider.size = startColliderSize;
+        _lifetime = 0.0f;
+        _isPopping = true;
+        _collider.size = _startColliderSize;
     }
 }

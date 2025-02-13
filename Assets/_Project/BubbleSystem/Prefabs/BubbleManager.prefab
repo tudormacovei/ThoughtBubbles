@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a609f33e9263b4f99519c0a7a9e746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleClass: {fileID: 3645639697369202026, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
-  SpawnPositions:
+  _bubbleClass: {fileID: 3645639697369202026, guid: 870adaf7914f69e4990311e26abd54e7, type: 3}
+  _spawnPositions:
   - {fileID: 6891187059283629343}
   - {fileID: 5835800238698006427}
   - {fileID: 1502898751817388972}
@@ -76,10 +76,9 @@ MonoBehaviour:
   - {fileID: 3025781412999366526}
   - {fileID: 4568285675523496571}
   - {fileID: 2880103336888921791}
-  SpawnDelay: 0.08
+  _spawnDelay: 0.15
+  _catPopCooldown: 5
   _endScene: {fileID: 0}
-  IsSpawning: 0
-  CatPopCooldown: 0
 --- !u!1 &1200602819707677997
 GameObject:
   m_ObjectHideFlags: 0

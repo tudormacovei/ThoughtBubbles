@@ -7,9 +7,9 @@ public class CatEvent : Singleton<CatEvent>
     public static bool IsCutScene = false;
 
     [SerializeField] 
-    int TriggerThreshold;
+    int _triggerThreshold;
 
-    int TriggerCounter;
+    int _triggerCounter;
 
     [SerializeField]
     Animator _anim;
@@ -29,9 +29,9 @@ public class CatEvent : Singleton<CatEvent>
 
     public void CountTrigger()
     {
-        TriggerCounter++;
+        _triggerCounter++;
 
-        if (TriggerCounter >= TriggerThreshold)
+        if (_triggerCounter >= _triggerThreshold)
         {
             IsCutScene = true;
             StartCoroutine(CatDiesEvent());

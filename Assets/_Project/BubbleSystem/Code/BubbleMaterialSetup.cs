@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class BubbleMaterialSetup : MonoBehaviour
 {
-    public List<float> frameCount;
-    public List<Texture2DArray> tex;
-    public List<Texture2DArray> tex_interior;
+    [SerializeField] List<float> _frameCount;
+    [SerializeField] List<Texture2DArray> _tex;
+    [SerializeField] List<Texture2DArray> texInterior;
 
     [SerializeField, Range(0, 3)]
-    public int AnimationIndex;
+    int _animationIndex;
 
-    public bool RandomizeAnimation;
+    [SerializeField] bool _randomizeAnimation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (RandomizeAnimation)
+        if (_randomizeAnimation)
         {
             SetAnimation(Random.Range(0, 4));
         }
         else
         {
-            SetAnimation(AnimationIndex);
+            SetAnimation(_animationIndex);
         }
     }
 
@@ -32,18 +32,12 @@ public class BubbleMaterialSetup : MonoBehaviour
         GetComponent<Renderer>().GetPropertyBlock(properties);
 
         // Set random values
-        properties.SetFloat("_Frames", frameCount[idx]);
+        properties.SetFloat("_Frames", _frameCount[idx]);
         properties.SetFloat("_StartTime", Random.Range(0.0f, 4.0f));
-        properties.SetTexture("_Anim", tex[idx]);
-        properties.SetTexture("_AnimInt", tex_interior[idx]);
+        properties.SetTexture("_Anim", _tex[idx]);
+        properties.SetTexture("_AnimInt", texInterior[idx]);
 
         // Apply the property block to the renderer
         GetComponent<Renderer>().SetPropertyBlock(properties);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

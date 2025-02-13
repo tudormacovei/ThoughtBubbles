@@ -3,20 +3,20 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class popInAtSpawn : MonoBehaviour
+public class PopInAtSpawn : MonoBehaviour
 {
-    public float AnimDuration;
-    public float AnimDurationOut;
-    public List<CircleCollider2D> Colliders;
-    public GameObject ParentBone;
+    [SerializeField] float _animDuration;
+    [SerializeField] float _animDurationOut;
+    [SerializeField] List<CircleCollider2D> _colliders;
+    [SerializeField] GameObject _parentBone;
 
-    float endColliderSize;
-    float startColliderSize;
-    bool disabledExternalCollider;
-    bool isPopping;
-    float lifetime;
-    Vector3 startScale;
-    Vector3 endScale;
+    float _endColliderSize;
+    float _startColliderSize;
+    bool _disabledExternalCollider;
+    bool _isPopping;
+    float _lifetime;
+    Vector3 _startScale;
+    Vector3 _endScale;
 
     // the value of this function is a bounce effect, as the variable x goes from 0 to 1
     public static float BounceEffect(float x)
@@ -36,63 +36,63 @@ public class popInAtSpawn : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach (var collider in Colliders)
+        foreach (var collider in _colliders)
         {
             collider.enabled = false;
         }
-        disabledExternalCollider = false;
+        _disabledExternalCollider = false;
 
-        lifetime = 0.0f;
-        endScale = ParentBone.transform.localScale;
-        startScale = new Vector3(0.1f, 0.1f, 0.1f);
-        ParentBone.transform.localScale = startScale;
+        _lifetime = 0.0f;
+        _endScale = _parentBone.transform.localScale;
+        _startScale = new Vector3(0.1f, 0.1f, 0.1f);
+        _parentBone.transform.localScale = _startScale;
 
-        endColliderSize = GetComponent<CircleCollider2D>().radius;
-        startColliderSize = 0.01f;
-        GetComponent<CircleCollider2D>().radius = startColliderSize;
-        isPopping = false;
+        _endColliderSize = GetComponent<CircleCollider2D>().radius;
+        _startColliderSize = 0.01f;
+        GetComponent<CircleCollider2D>().radius = _startColliderSize;
+        _isPopping = false;
 
         // this small fuzzyness in scale acts as a random seed for the sprite material
-        ParentBone.transform.parent.GameObject().transform.localScale = Vector3.one * Random.Range(0.99f, 1.01f); 
+        _parentBone.transform.parent.GameObject().transform.localScale = Vector3.one * Random.Range(0.99f, 1.01f); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isPopping)
+        if (_isPopping)
         {
-            lifetime += Time.deltaTime * (1.0f / AnimDurationOut);
+            _lifetime += Time.deltaTime * (1.0f / _animDurationOut);
         }
         else
         {
-            lifetime += Time.deltaTime * (1.0f / AnimDuration);
+            _lifetime += Time.deltaTime * (1.0f / _animDuration);
         }
-        if (lifetime <= 1)
+        if (_lifetime <= 1)
         {
-            if (isPopping)
+            if (_isPopping)
             {
-                Color color = ParentBone.transform.parent.gameObject.GetComponent<SpriteRenderer>().color;
-                color.a = Mathf.Clamp(1.0f - Mathf.Pow(lifetime, 8.0f), 0.0f, 1.0f);
-                ParentBone.transform.parent.gameObject.GetComponent<SpriteRenderer>().color = color;
-                ParentBone.transform.localScale = Vector3.LerpUnclamped(startScale, endScale, BounceOutEffect(lifetime));
+                Color color = _parentBone.transform.parent.gameObject.GetComponent<SpriteRenderer>().color;
+                color.a = Mathf.Clamp(1.0f - Mathf.Pow(_lifetime, 8.0f), 0.0f, 1.0f);
+                _parentBone.transform.parent.gameObject.GetComponent<SpriteRenderer>().color = color;
+                _parentBone.transform.localScale = Vector3.LerpUnclamped(_startScale, _endScale, BounceOutEffect(_lifetime));
             }
             else
             {
-                ParentBone.transform.localScale = Vector3.LerpUnclamped(startScale, endScale, BounceEffect(lifetime));
+                _parentBone.transform.localScale = Vector3.LerpUnclamped(_startScale, _endScale, BounceEffect(_lifetime));
             }
-            GetComponent<CircleCollider2D>().radius = Mathf.Lerp(startColliderSize, endColliderSize, lifetime);
+            GetComponent<CircleCollider2D>().radius = Mathf.Lerp(_startColliderSize, _endColliderSize, _lifetime);
         }
-        else if (!disabledExternalCollider)
+        else if (!_disabledExternalCollider)
         {
             GetComponent<CircleCollider2D>().enabled = false;
-            foreach (var collider in Colliders)
+            foreach (var collider in _colliders)
             {
                 collider.enabled = true;
             }
-            disabledExternalCollider = true;
+            _disabledExternalCollider = true;
             Debug.Log("Disabled external collider");
         }
-        else if (isPopping)
+        else if (_isPopping)
         {
             Destroy(gameObject.transform.parent.gameObject);
         }
@@ -100,15 +100,15 @@ public class popInAtSpawn : MonoBehaviour
 
     public void PopOut()
     {
-        foreach (var collider in Colliders)
+        foreach (var collider in _colliders)
         {
             collider.enabled = false;
         }
-        startScale = new Vector3(0.0f, 0.0f, 0.0f);
-        endScale = ParentBone.transform.localScale;
-        startColliderSize = 0.3f;
-        endColliderSize = GetComponent<CircleCollider2D>().radius * 1.2f; // exaggerate effect
-        lifetime = 0.0f;
-        isPopping = true;
+        _startScale = new Vector3(0.0f, 0.0f, 0.0f);
+        _endScale = _parentBone.transform.localScale;
+        _startColliderSize = 0.3f;
+        _endColliderSize = GetComponent<CircleCollider2D>().radius * 1.2f; // exaggerate effect
+        _lifetime = 0.0f;
+        _isPopping = true;
     }
 }

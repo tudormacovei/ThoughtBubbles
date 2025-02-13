@@ -19,7 +19,10 @@ public class ItemInteraction : MonoBehaviour
     {
         //if (CatEvent.IsCutScene) return;
 
-        if (FrameController.Instance.Moving) return;
+        if (FrameController.Instance.Moving)
+        {
+            return;
+        }
 
         _col.enabled = false;
 
@@ -27,9 +30,7 @@ public class ItemInteraction : MonoBehaviour
         StartCoroutine(FrameController.SpriteFade(_unInteractable, 1, FrameController.Instance.FadeInDuration));
 
         FrameController.Instance.DisableButtons();
-
         CatEvent.Instance.CountTrigger();
-
         DialogManager.Instance.SpawnDialog(_dialogIndex);
     }
 
@@ -37,6 +38,7 @@ public class ItemInteraction : MonoBehaviour
     {
         float elapsedTime = 0;
         float startValue = sr.color.a;
+
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;

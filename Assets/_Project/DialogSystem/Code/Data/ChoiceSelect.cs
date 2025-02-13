@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ChoiceSelect : MonoBehaviour
 {
-    //Cat dies after x choices made!
+    // Cat dies after x choices made!
     static int ChoicesMade = 0;
 
     public int Damage = 0;

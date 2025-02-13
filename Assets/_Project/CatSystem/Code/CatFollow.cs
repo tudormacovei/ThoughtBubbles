@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class CatFollow : MonoBehaviour
 {
-	[SerializeField] private Transform target = null;
-	[SerializeField] private float _trackSpeed = 2.0f;
-	[SerializeField] private float _innerBuffer = 0.1f;
-	[SerializeField] private float _outerBuffer = 1.5f;
+	[SerializeField] Transform target = null;
+	[SerializeField] float _trackSpeed = 2.0f;
+	[SerializeField] float _innerBuffer = 0.1f;
+	[SerializeField] float _outerBuffer = 1.5f;
 
-	[SerializeField] private SpriteRenderer _rend;
-	[SerializeField] private Animator _animator;
+	[SerializeField] SpriteRenderer _spriteRenderer;
+	[SerializeField] Animator _animator;
 
 	[SerializeField] Vector3 _offset;
 
-	[SerializeField] float LeftXOffset = -1;
-	[SerializeField] float RightXOffset = 1;
+	[SerializeField] float _leftXOffset = -1;
+	[SerializeField] float _rightXOffset = 1;
 
     Vector3 _offsetHandle;
 
@@ -29,24 +29,24 @@ public class CatFollow : MonoBehaviour
 			_isFollowing = value;
 			_animator.SetBool("IsWalking", value);
 
-			_rend.flipX = FrameController.Instance.GetComponentInChildren<SpriteRenderer>().flipX;
+			_spriteRenderer.flipX = FrameController.Instance.GetComponentInChildren<SpriteRenderer>().flipX;
 
 			if (FrameController.Instance.CurrrentFrame == 0)
             {
-				_offsetHandle = new Vector3(LeftXOffset, 0, 0) + _offset;
+				_offsetHandle = new Vector3(_leftXOffset, 0, 0) + _offset;
 
 				if (!value)
-					_rend.flipX = false;
+					_spriteRenderer.flipX = false;
 
 				return;
             }
 
 			if (FrameController.Instance.CurrrentFrame == 3)
             {
-				_offsetHandle = new Vector3(RightXOffset, 0, 0) + _offset;
+				_offsetHandle = new Vector3(_rightXOffset, 0, 0) + _offset;
 
 				if (!value)
-					_rend.flipX = true;
+					_spriteRenderer.flipX = true;
 
 				return;
 			}

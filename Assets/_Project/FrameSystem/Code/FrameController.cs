@@ -21,12 +21,12 @@ public class FrameController : Singleton<FrameController>
     [SerializeField]
     SpriteRenderer _sprite;
 
-    [SerializeField] float moveDuration;
+    [SerializeField] float _moveDuration;
 
-    [SerializeField] float fadeInDuration;
-    [SerializeField] float fadeOutDuration;
+    [SerializeField] float _fadeInDuration;
+    [SerializeField] float _fadeOutDuration;
 
-    public float FadeInDuration => fadeInDuration;
+    public float FadeInDuration => _fadeInDuration;
 
     int _currentFrame;
 
@@ -76,10 +76,10 @@ public class FrameController : Singleton<FrameController>
             _switchers[previousFrame].DisableFrame();
             _switchers[_currentFrame].EnableFrame();
 
-            StartCoroutine(SpriteFade(_framefade[previousFrame], 0, fadeOutDuration));
-            StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, fadeInDuration));
+            StartCoroutine(SpriteFade(_framefade[previousFrame], 0, _fadeOutDuration));
+            StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, _fadeInDuration));
 
-            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, moveDuration));
+            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, _moveDuration));
             StartCoroutine(BubbleManager.Instance.Move(true));
         }
     }
@@ -99,10 +99,10 @@ public class FrameController : Singleton<FrameController>
             _switchers[previousFrame].DisableFrame();
             _switchers[_currentFrame].EnableFrame();
 
-            StartCoroutine(SpriteFade(_framefade[previousFrame], 0, fadeOutDuration));
-            StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, fadeInDuration));
+            StartCoroutine(SpriteFade(_framefade[previousFrame], 0, _fadeOutDuration));
+            StartCoroutine(SpriteFade(_framefade[_currentFrame], 1, _fadeInDuration));
 
-            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, moveDuration));
+            StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, _moveDuration));
             
             StartCoroutine(BubbleManager.Instance.Move(false)); // move bubbles along
         }

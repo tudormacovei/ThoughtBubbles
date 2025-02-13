@@ -7,24 +7,24 @@ public class DialogManager : MonoBehaviour
     public static DialogManager Instance;
 
     [Header("ScriptableObject")]
-    [SerializeField] private DialogScriptableObjectScript dialogScriptableObject;
+    [SerializeField] DialogScriptableObjectScript _dialogScriptableObject;
 
     [Header("Choice")]
-    [SerializeField] private GameObject choicePrefab;
-    [SerializeField] private float choiceAnimOffset;
-    private Queue<GameObject> choicePool = new Queue<GameObject>();
-    [SerializeField] private List<GameObject> activeChoiceList = new List<GameObject>(); 
+    [SerializeField] GameObject _choicePrefab;
+    [SerializeField] float _choiceAnimOffset;
+    [SerializeField] List<GameObject> _activeChoiceList = new List<GameObject>();
+    private Queue<GameObject> _choicePool = new Queue<GameObject>();
 
     [Header("Question")]
-    [SerializeField] private GameObject questionPrefab;
-    [SerializeField] private GameObject question;
-    [SerializeField] private Vector2 questionPositionOffset;
+    [SerializeField] GameObject _questionPrefab;
+    [SerializeField] GameObject _question;
+    [SerializeField] Vector2 _questionPositionOffset;
 
     [Header("Player")]
-    public Transform playerTransform;
+    [SerializeField] Transform _playerTransform;
 
     [Header("Test")]
-    [SerializeField] private int myNum;
+    [SerializeField] int _myNum; // TODO: is this necessary?
 
     void Awake()
     {
@@ -41,12 +41,12 @@ public class DialogManager : MonoBehaviour
     [ContextMenu("SpawnDialogTest")]
     void SpawnDialogTest()
     {
-        SpawnDialog(myNum);
+        SpawnDialog(_myNum);
     }
 
     public void SpawnDialog(int dialogNum)
     {
-        if (dialogNum < 0 || dialogNum >= dialogScriptableObject.dialogDatas.Length)
+        if (dialogNum < 0 || dialogNum >= _dialogScriptableObject.DialogDatas.Length)
         {
             Debug.LogError("The value of dialogNum is out of dialogScriptableObject.dialogDatas range!");
             return;
@@ -57,13 +57,13 @@ public class DialogManager : MonoBehaviour
 
         SpawnQuestion(dialogNum);
 
-        int choicesLength = dialogScriptableObject.dialogDatas[dialogNum].choices.Length;
+        int choicesLength = _dialogScriptableObject.DialogDatas[dialogNum].choices.Length;
 
         for (int i = 0; i < choicesLength; i++)
         {
-            GameObject choice = GetChoice(dialogScriptableObject.dialogDatas[dialogNum].damageNumber[i]);
+            GameObject choice = GetChoice(_dialogScriptableObject.DialogDatas[dialogNum].damageNumber[i]);
 
-            choice.GetComponentInChildren<TMP_Text>().text = dialogScriptableObject.dialogDatas[dialogNum].choices[i];
+            choice.GetComponentInChildren<TMP_Text>().text = _dialogScriptableObject.DialogDatas[dialogNum].choices[i];
 
             choice.SetActive(true);
 
@@ -73,32 +73,32 @@ public class DialogManager : MonoBehaviour
                 distanceY++;
             }
 
-            StartCoroutine(choice.GetComponent<ChoiceMove>().CoAnimateButton(distanceY * choiceAnimOffset));
+            StartCoroutine(choice.GetComponent<ChoiceMove>().CoAnimateButton(distanceY * _choiceAnimOffset));
         }
     }
 
     void SpawnQuestion(int dialogNum)
     {
-        if(question == null)
+        if(_question == null)
         {
-            question = Instantiate(questionPrefab, Vector2.zero, Quaternion.identity);
-            question.transform.SetParent(transform);
+            _question = Instantiate(_questionPrefab, Vector2.zero, Quaternion.identity);
+            _question.transform.SetParent(transform);
         }
-        question.GetComponent<RectTransform>().anchoredPosition = questionPositionOffset;
-        question.GetComponentInChildren<TMP_Text>().text = dialogScriptableObject.dialogDatas[dialogNum].question;
+        _question.GetComponent<RectTransform>().anchoredPosition = _questionPositionOffset;
+        _question.GetComponentInChildren<TMP_Text>().text = _dialogScriptableObject.DialogDatas[dialogNum].question;
 
-        question.SetActive(true);
+        _question.SetActive(true);
     }
 
     public void InactivateDialog()
     {
-        question.SetActive(false);
+        _question.SetActive(false);
 
-        foreach(var choice in activeChoiceList)
+        foreach(var choice in _activeChoiceList)
         {
             ReleaseChoice(choice);
         }
-        activeChoiceList.Clear();
+        _activeChoiceList.Clear();
     }
 
     public void Move(bool moveRight)
@@ -119,13 +119,13 @@ public class DialogManager : MonoBehaviour
     {
         GameObject choice;
 
-        if (choicePool.Count > 0)
+        if (_choicePool.Count > 0)
         {
-            choice = choicePool.Dequeue();
+            choice = _choicePool.Dequeue();
         }
         else
         {
-            choice = Instantiate(choicePrefab, Vector2.zero, Quaternion.identity);
+            choice = Instantiate(_choicePrefab, Vector2.zero, Quaternion.identity);
             choice.transform.SetParent(transform);
             
             if (choice.TryGetComponent(out ChoiceSelect cs)) {
@@ -133,14 +133,14 @@ public class DialogManager : MonoBehaviour
             }
         }
 
-        activeChoiceList.Add(choice);
+        _activeChoiceList.Add(choice);
         return choice;
     }
 
     void ReleaseChoice(GameObject choice)
     {
         choice.SetActive(false);
-        choicePool.Enqueue(choice);
+        _choicePool.Enqueue(choice);
     }
     #endregion
 }

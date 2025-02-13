@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135adcf2c300c2340b9929affdfecb80, type: 3}
   m_Name: DialogScriptableObject
   m_EditorClassIdentifier: 
-  dialogDatas:
+  DialogDatas:
   - question: You forgot to turn off the tv.. it's nice to keep some sound in the
       background
     choices:

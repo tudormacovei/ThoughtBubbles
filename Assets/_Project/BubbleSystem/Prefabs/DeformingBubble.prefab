@@ -589,23 +589,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baa268804000d64ab9a4670ba812ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameCount:
+  _frameCount:
   - 16
   - 44
   - 20
   - 35
-  tex:
+  _tex:
   - {fileID: 18700000, guid: eea9059539eac694b90ddf509b069083, type: 3}
   - {fileID: 18700000, guid: 078f6e649bd2c504c93665a2d9181273, type: 3}
   - {fileID: 18700000, guid: c7d49f20901fa0f4e81859c5f29ff095, type: 3}
   - {fileID: 18700000, guid: 9e062d26062cff141ae0158943bd8036, type: 3}
-  tex_interior:
+  texInterior:
   - {fileID: 18700000, guid: 77ff0417f0150a346ae3b6146c1d4884, type: 3}
   - {fileID: 18700000, guid: 3165684f3b73d4d488ca87b3fbb08775, type: 3}
   - {fileID: 18700000, guid: 77ff0417f0150a346ae3b6146c1d4884, type: 3}
   - {fileID: 18700000, guid: 77ff0417f0150a346ae3b6146c1d4884, type: 3}
-  AnimationIndex: 0
-  RandomizeAnimation: 1
+  _animationIndex: 0
+  _randomizeAnimation: 0
 --- !u!114 &560878833201551739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,9 +1533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b01259c3b3e5e542b395db17ad2cb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimDuration: 0.3
-  AnimDurationOut: 0.2
-  Colliders:
+  _animDuration: 0.3
+  _animDurationOut: 0.4
+  _colliders:
   - {fileID: 125001522630196002}
   - {fileID: 8536139412764958545}
   - {fileID: 3030258252431934939}
@@ -1553,7 +1553,7 @@ MonoBehaviour:
   - {fileID: 6031389976277775282}
   - {fileID: 8529350848190995738}
   - {fileID: 1218873893634897599}
-  ParentBone: {fileID: 6537928628838282016}
+  _parentBone: {fileID: 6537928628838282016}
 --- !u!1 &6537928628838282016
 GameObject:
   m_ObjectHideFlags: 0
