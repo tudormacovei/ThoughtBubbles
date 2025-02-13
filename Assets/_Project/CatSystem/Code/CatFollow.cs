@@ -10,11 +10,14 @@ public class CatFollow : MonoBehaviour
 	[SerializeField] private SpriteRenderer _rend;
 	[SerializeField] private Animator _animator;
 
-	[SerializeField] Vector3 _offsetHandle;
+	[SerializeField] Vector3 _offset;
+
 	[SerializeField] float LeftXOffset = -1;
 	[SerializeField] float RightXOffset = 1;
 
-	bool _isFollowing;
+    Vector3 _offsetHandle;
+
+    bool _isFollowing;
 	bool IsFollowing 
 	{
         get
@@ -30,7 +33,7 @@ public class CatFollow : MonoBehaviour
 
 			if (FrameController.Instance.CurrrentFrame == 0)
             {
-				_offsetHandle = new Vector3(LeftXOffset, 0, 0);
+				_offsetHandle = new Vector3(LeftXOffset, 0, 0) + _offset;
 
 				if (!value)
 					_rend.flipX = false;
@@ -40,7 +43,7 @@ public class CatFollow : MonoBehaviour
 
 			if (FrameController.Instance.CurrrentFrame == 3)
             {
-				_offsetHandle = new Vector3(RightXOffset, 0, 0);
+				_offsetHandle = new Vector3(RightXOffset, 0, 0) + _offset;
 
 				if (!value)
 					_rend.flipX = true;

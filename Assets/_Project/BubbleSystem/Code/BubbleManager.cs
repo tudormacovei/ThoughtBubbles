@@ -185,7 +185,7 @@ public class BubbleManager : MonoBehaviour
     }
 
     public void HandleDamage(int amount)
-    {
+    {     
         // this function exists to bind the coroutine below to this object
         StartCoroutine(HandleDamageAsync(amount));
     }
@@ -198,7 +198,7 @@ public class BubbleManager : MonoBehaviour
 
         while (enabled)
         {
-            Debug.Log("Amount of damage: " + amount.ToString());
+            Debug.Log("Amount of damage left to deal: " + amount.ToString());
             Vector3 position = SpawnPositions[BubbleList.Count % SpawnPositions.Count].transform.position;
             if (amount == 0)
             {
@@ -217,6 +217,10 @@ public class BubbleManager : MonoBehaviour
             {
                 if (BubbleCount <= 0)
                 {
+                    FrameController.Instance.EnableButtons();
+
+                    IsSpawning = false;
+                    StopAllCoroutines();
                     yield break;
                 }
                 RemoveBubble();
