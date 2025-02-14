@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class MenuManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [SerializeField] Vector3 MainMenuCameraLocation = Vector3.zero;
     [SerializeField] Vector3 SettingsCameraLocation = Vector3.zero;

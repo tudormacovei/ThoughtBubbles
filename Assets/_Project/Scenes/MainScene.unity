@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 60918723}
-  - component: {fileID: 60918724}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -153,23 +152,6 @@ Transform:
   - {fileID: 755604833}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &60918724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60918722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5425ed30ac4e1c46ad6f106c769d03a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenuCameraLocation: {x: 0, y: 0, z: -10}
-  SettingsCameraLocation: {x: 0, y: 45, z: -10}
-  GameCameraLocation: {x: 0, y: 0, z: -10}
-  TutorialCameraLocation: {x: 0, y: 35, z: -10}
-  TransitionTime: 3
 --- !u!1 &63479829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,7 +1739,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324238053}
-  - component: {fileID: 324238052}
   m_Layer: 0
   m_Name: Tutorial Menu
   m_TagString: Untagged
@@ -1765,23 +1746,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &324238052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 324238051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5425ed30ac4e1c46ad6f106c769d03a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenuCameraLocation: {x: 0, y: 0, z: -10}
-  SettingsCameraLocation: {x: 0, y: 0, z: -10}
-  GameCameraLocation: {x: 0, y: 0, z: -10}
-  TutorialCameraLocation: {x: 0, y: 0, z: 0}
-  TransitionTime: 3
 --- !u!4 &324238053
 Transform:
   m_ObjectHideFlags: 0
@@ -2806,7 +2770,6 @@ GameObject:
   - component: {fileID: 512763029}
   - component: {fileID: 512763028}
   - component: {fileID: 512763027}
-  - component: {fileID: 512763030}
   m_Layer: 5
   m_Name: ContinueToGameButton
   m_TagString: Untagged
@@ -2877,8 +2840,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 60918724}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 936942323}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: MoveToGame
         m_Mode: 1
         m_Arguments:
@@ -2927,52 +2890,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512763025}
   m_CullTransparentMesh: 0
---- !u!61 &512763030
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512763025}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &541303814
 GameObject:
   m_ObjectHideFlags: 0
@@ -4674,6 +4591,55 @@ MonoBehaviour:
   _coloredItems:
   - {fileID: 1071982891}
   - {fileID: 136107185}
+--- !u!1 &936942322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936942324}
+  - component: {fileID: 936942323}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &936942323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936942322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5425ed30ac4e1c46ad6f106c769d03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenuCameraLocation: {x: 0, y: 0, z: -10}
+  SettingsCameraLocation: {x: 0, y: 45, z: -10}
+  GameCameraLocation: {x: 0, y: 0, z: -10}
+  TutorialCameraLocation: {x: 0, y: 35, z: -10}
+  TransitionTime: 3
+--- !u!4 &936942324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936942322}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6603227, y: 0.21297021, z: 0.46059546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &942068087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2275240243274226359, guid: acdfc9ff70c89f04d9ebe75b8234b752, type: 3}
@@ -5631,7 +5597,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 60918724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: MoveToSettings
         m_Mode: 1
@@ -6011,8 +5977,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 60918724}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 936942323}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: MoveToTutorial
         m_Mode: 1
         m_Arguments:
@@ -9450,7 +9416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd7cb9b3ad6d243b3c749cd2b7f14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogIndex: 6
+  _dialogIndex: 7
   _interactable: {fileID: 63479831}
   _unInteractable: {fileID: 1754885367}
 --- !u!1001 &2038272604
@@ -10789,3 +10755,4 @@ SceneRoots:
   - {fileID: 60918723}
   - {fileID: 324238053}
   - {fileID: 875443033}
+  - {fileID: 936942324}

@@ -18,32 +18,32 @@ MonoBehaviour:
     choices:
     - Turn the tv off
     - Keep it on
-    damageNumber: 03000000ffffffff
+    damageNumber: 03000000feffffff
   - question: There is a funny video on the television... watch some more tv?
     choices:
     - No
     - Yes
-    damageNumber: 03000000ffffffff
+    damageNumber: 03000000feffffff
   - question: You hate the sounds of alarms... and you love sleep
     choices:
     - Sleep as long as you want
     - Set an alarm for the next day
-    damageNumber: 0500000003000000
+    damageNumber: 0400000001000000
   - question: What do you want to make for breakfast
     choices:
     - I guess, I'll make an easy sandwitch
     - Something fancy
-    damageNumber: 04000000fdffffff
+    damageNumber: 04000000ffffffff
   - question: Should I take my pills or make some tea?
     choices:
     - Make tea
     - Take pills
-    damageNumber: 04000000fcffffff
+    damageNumber: 01000000fcffffff
   - question: You are not sure how to take care of the plant... it looks dry
     choices:
     - Give it lots of water
     - Give it a little bit of water
-    damageNumber: 04000000ffffffff
+    damageNumber: 03000000feffffff
   - question: You haven't showered in a few days because the shower is broken
     choices:
     - Call someone to fix it

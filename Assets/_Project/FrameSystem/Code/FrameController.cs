@@ -59,9 +59,17 @@ public class FrameController : Singleton<FrameController>
 
     public void MoveNext()
     {
-        if (BubbleManager.Instance.IsSpawning) return;
+        if (BubbleManager.Instance.IsSpawning)
+        {
+            Debug.Log("Bubble Manager is spawning! Cancelling frame move...");
+            return;
+        }
 
-        if (CatEvent.IsCutScene) return;
+        if (CatEvent.IsCutScene)
+        {
+            Debug.Log("Currently in cat cutscene! Cancelling frame move...");
+            return;
+        }
 
         if (_currentFrame == _frames.Length - 1) return;
 
@@ -86,6 +94,18 @@ public class FrameController : Singleton<FrameController>
 
     public void MovePrev()
     {
+        if (BubbleManager.Instance.IsSpawning)
+        {
+            Debug.Log("Bubble Manager is spawning! Cancelling frame move...");
+            return;
+        }
+
+        if (CatEvent.IsCutScene)
+        {
+            Debug.Log("Currently in cat cutscene! Cancelling frame move...");
+            return;
+        }
+
         if (_currentFrame == 0) return;
 
         int previousFrame = _currentFrame;
