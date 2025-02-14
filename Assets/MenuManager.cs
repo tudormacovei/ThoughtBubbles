@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private Vector3 MainMenuCameraLocation = Vector3.zero;
-    [SerializeField] private Vector3 SettingsCameraLocation = Vector3.zero;
-    [SerializeField] private Vector3 GameCameraLocation = Vector3.zero;
+    [SerializeField] Vector3 MainMenuCameraLocation = Vector3.zero;
+    [SerializeField] Vector3 SettingsCameraLocation = Vector3.zero;
+    [SerializeField] Vector3 GameCameraLocation = Vector3.zero;
+    [SerializeField] Vector3 TutorialCameraLocation = Vector3.zero;
 
-    [SerializeField] private float TransitionTime = 1.0f;
+    [SerializeField] float TransitionTime = 1.0f;
 
     float StartTime;
     Vector3 StartPosition;
@@ -39,8 +40,14 @@ public class MenuManager : MonoBehaviour
         MoveTo(GameCameraLocation);
     }
 
+    public void MoveToTutorial()
+    {
+        MoveTo(TutorialCameraLocation);
+    }
+
     private void MoveTo(Vector3 position)
     {
+        StopAllCoroutines(); // To stop any existing MoveToAsync execution
         StartTime = Time.time;
         StartPosition = Camera.main.transform.position;
         StartCoroutine(MovetoAsync(position));
@@ -51,7 +58,7 @@ public class MenuManager : MonoBehaviour
         while (enabled && Time.time < StartTime + TransitionTime)
         {
             Camera.main.transform.position = Vector3.Lerp(StartPosition, position, Mathf.SmoothStep(0.0f, 1.0f, (Time.time - StartTime) / TransitionTime));
-            yield return 1;
+            yield return 1; // To go to next frame
         }
         yield break;
     }
