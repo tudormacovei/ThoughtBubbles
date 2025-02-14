@@ -26,6 +26,9 @@ public class BubbleManager : MonoBehaviour
 
     public bool IsSpawning { get; private set; }
 
+    bool _isAutoSpawnEnabled;
+    [SerializeField] float _bubbleAutoSpawnTimer;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -46,6 +49,29 @@ public class BubbleManager : MonoBehaviour
         
         // sort spawn positions by y-position, negative so the values with the highest y are first
         _spawnPositions = _spawnPositions.OrderBy(go => -go.transform.position.y).ToList();
+        _isAutoSpawnEnabled = false;
+    }
+
+    public void EnableAutoSpawnBubbles()
+    {
+        _isAutoSpawnEnabled = true;
+        StartCoroutine(AutoSpawnBubbles(_bubbleAutoSpawnTimer));
+    }
+
+    IEnumerator AutoSpawnBubbles(float delayTime)
+    {
+        while (enabled)
+        {
+            if (_isAutoSpawnEnabled)
+            {
+                StopCoroutine(AutoSpawnBubbles(delayTime));
+                yield break;
+            }
+
+            yield return new WaitForSeconds(delayTime);
+            HandleDamage(1);
+        }
+        yield return null;
     }
 
     // Update is called once per frame

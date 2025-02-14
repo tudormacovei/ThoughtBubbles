@@ -5,27 +5,17 @@ using System.Collections;
 public class CatEvent : Singleton<CatEvent>
 {
     public static bool IsCutScene = false;
-
-    [SerializeField] 
-    int _triggerThreshold;
-
     int _triggerCounter;
 
-    [SerializeField]
-    Animator _anim;
+    [Header("General")]
+    [SerializeField] int _triggerThreshold;
+    [SerializeField] Animator _anim;
 
     [Header("Ghost")]
-    [SerializeField]
-    SpriteRenderer _cat;
-
-    [SerializeField]
-    PlayCutscene _cutscene;
-
-    [SerializeField]
-    float _time;
-
-    [SerializeField]
-    float _height;
+    [SerializeField] SpriteRenderer _cat;
+    [SerializeField] PlayCutscene _cutscene;
+    [SerializeField] float _time;
+    [SerializeField] float _height;
 
     public void CountTrigger()
     {
@@ -42,11 +32,11 @@ public class CatEvent : Singleton<CatEvent>
     {
         _anim.SetBool("IsDead", true);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4.0f);
 
-        StartCoroutine(FrameController.SpriteFade(_cat, 0, 4));
+        // StartCoroutine(FrameController.SpriteFade(_cat, 0, 4));
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.0f);
 
         _anim.SetBool("IsGhost", true);
 
@@ -75,7 +65,7 @@ public class CatEvent : Singleton<CatEvent>
 
         yield return new WaitForSeconds(5);
 
-        _cat.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         IsCutScene = false;
     }
 }

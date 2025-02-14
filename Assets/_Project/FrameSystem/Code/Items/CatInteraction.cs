@@ -9,7 +9,6 @@ public class CatInteraction : MonoBehaviour
     [SerializeField] int _dialogIndex;
     [SerializeField] float _delay;
     [SerializeField] Animator _anim;
-    [SerializeField] Collider2D _col; // TODO: remove, this is deprecated
     [SerializeField] TextMeshProUGUI _popText;
 
     bool _didInteract = false;
@@ -22,10 +21,18 @@ public class CatInteraction : MonoBehaviour
     Vector3 _startPos;
     bool _didRemoveBubble;
 
-    IEnumerator DelaySpawnDialog(float seconds, int dialogIndex)
+    IEnumerator HandleCatPettingAsync(float seconds, int dialogIndex)
     {
-        yield return new WaitForSeconds(seconds);
-        DialogManager.Instance.SpawnDialog(dialogIndex);
+        _anim.SetBool("IsPetting", true);
+        yield return new WaitForSeconds(seconds); // wait before spawning Dialog box
+        
+        if (!_didInteract)
+        {
+            DialogManager.Instance.SpawnDialog(dialogIndex);
+            _didInteract = true;
+        }
+
+        yield return new WaitForSeconds(2.0f); // show the petting animation for 2 seconds
         _anim.SetBool("IsPetting", false);
         
         StopAllCoroutines();
@@ -36,15 +43,15 @@ public class CatInteraction : MonoBehaviour
         _elapsedTime += Time.deltaTime;
         if (_elapsedTime / _cooldown < 0.2f)
         {
-            _popText.text = "Wait...";
+            _popText.text = "WAIT......";
         }
         else if (_elapsedTime / _cooldown < 0.5f)
         {
-            _popText.text = "Wait..";
+            _popText.text = "WAIT....";
         }
         else if (_elapsedTime / _cooldown < 0.8f)
         {
-            _popText.text = "Wait.";
+            _popText.text = "WAIT..";
         }
         else
         {
@@ -59,10 +66,9 @@ public class CatInteraction : MonoBehaviour
             {
                 // ON EXIT
                 _elapsedAnimTime = 0.0f;
-                _elapsedTime = 0.0f;
                 _didRemoveBubble = false;
                 _anim.SetBool("IsJumping", false);
-
+                _elapsedTime = 0.0f;
                 Debug.Log("Exiting Pop Function");
                 StopAllCoroutines();
                 yield break;
@@ -73,6 +79,7 @@ public class CatInteraction : MonoBehaviour
 
             if (_elapsedAnimTime / _animDuration <= 0.2f) // sit still for the first part of the anim
             {
+                _elapsedTime = 0.0f; // To update on-screen text immediately when cat is clicked on
                 Debug.Log("Branch 1: Sitting");
             }
             else if (_elapsedAnimTime / _animDuration <= 0.6f)
@@ -97,17 +104,9 @@ public class CatInteraction : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // Pet Bubbles
         {
-            if (_didInteract)
-            {
-                return;
-            }
-
-            _anim.SetBool("IsPetting", true);
-            _didInteract = true;
-
-            StartCoroutine(DelaySpawnDialog(_delay, _dialogIndex));
+            StartCoroutine(HandleCatPettingAsync(_delay, _dialogIndex));
         }
         else if (Input.GetMouseButtonDown(1) && _elapsedTime > _cooldown && BubbleManager.Instance.GetBubbleCount() > 0 && !IsCatAnimPlaying())
         {

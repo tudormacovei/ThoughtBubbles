@@ -1583,15 +1583,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290523885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 13.333332}
+  m_LocalPosition: {x: 0, y: 0, z: 13.893601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 541303815}
+  m_Father: {fileID: 1185401221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.44, y: -30.473328}
+  m_AnchoredPosition: {x: -34.67, y: -330.47336}
   m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &290523887
@@ -1641,14 +1641,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2
-  m_fontSizeBase: 2
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 4
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1933,9 +1933,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 12
-  _delay: 2
+  _delay: 0.4
   _anim: {fileID: 458239863}
-  _col: {fileID: 359886386}
   _popText: {fileID: 290523887}
 --- !u!61 &359886386
 BoxCollider2D:
@@ -1995,7 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d00a038595fc04484c1b870b0a4d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggerThreshold: 4
+  _triggerThreshold: 1
   _anim: {fileID: 458239863}
   _cat: {fileID: 458239862}
   _cutscene: {fileID: 505168010}
@@ -3006,7 +3005,6 @@ RectTransform:
   m_Children:
   - {fileID: 464752748}
   - {fileID: 89761613}
-  - {fileID: 290523886}
   m_Father: {fileID: 691279241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3692,7 +3690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd15432a42c6b84e896e77d9a7e95bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animDuration: 1
+  _animDuration: 2
   _collider: {fileID: 691279243}
 --- !u!4 &703927804 stripped
 Transform:
@@ -5327,6 +5325,7 @@ RectTransform:
   - {fileID: 674956373}
   - {fileID: 1256794924}
   - {fileID: 1208815328}
+  - {fileID: 290523886}
   m_Father: {fileID: 60918723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
