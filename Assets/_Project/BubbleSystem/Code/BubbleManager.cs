@@ -19,12 +19,10 @@ public class BubbleManager : MonoBehaviour
 
     List<GameObject> _bubbleList; // all spawned bubbles
     int _bubbleCount; // tracks the number of bubbles that still exist in the level, both spawned or unspawned
-    
-    [SerializeField] PlayCutscene _endScene;
 
     float _timeSinceCatPop = 0.0f;
 
-    public bool IsSpawning { get; private set; }
+    public static bool IsSpawning { get; private set; }
 
     bool _isAutoSpawnEnabled;
     [SerializeField] float _bubbleAutoSpawnTimer;
@@ -62,14 +60,17 @@ public class BubbleManager : MonoBehaviour
     {
         while (enabled)
         {
-            if (_isAutoSpawnEnabled)
+            if (!_isAutoSpawnEnabled)
             {
                 StopCoroutine(AutoSpawnBubbles(delayTime));
                 yield break;
             }
 
             yield return new WaitForSeconds(delayTime);
-            HandleDamage(1);
+            if (GameManager.Instance.CanModifyGameState())
+            {
+                HandleDamage(1);
+            }
         }
         yield return null;
     }
@@ -97,7 +98,7 @@ public class BubbleManager : MonoBehaviour
             {
                 Debug.Log("Stopping coroutine...");
                 IsSpawning = false;
-                StopAllCoroutines();
+                StopCoroutine(SpawnBubblesRoutine());
                 yield break;
             }
             yield return new WaitForSeconds(Random.Range(0.0f + _spawnDelay, 0.1f + _spawnDelay));
@@ -108,10 +109,9 @@ public class BubbleManager : MonoBehaviour
     public void AddBubble(Vector3 position)
     {
         // if there are more bubbles spawned than can fit on the screen, END GAME
-        if (_bubbleCount >= _spawnPositions.Count)
+        if (_bubbleCount >= _spawnPositions.Count - 10) // TODO: Remove this
         {
-            _endScene.transform.GetChild(0).position = FrameController.Instance.transform.position;
-            _endScene.PlayVideo();
+            GameManager.Instance.EndGame();
             return;
         }
 
@@ -235,7 +235,7 @@ public class BubbleManager : MonoBehaviour
                 FrameController.Instance.EnableButtons();
 
                 IsSpawning = false;
-                StopAllCoroutines();
+                StopCoroutine(HandleDamageAsync(amount));
                 yield break;
             }
             else if (amount > 0)
@@ -250,7 +250,7 @@ public class BubbleManager : MonoBehaviour
                     FrameController.Instance.EnableButtons();
 
                     IsSpawning = false;
-                    StopAllCoroutines();
+                    StopCoroutine(HandleDamageAsync(amount));
                     yield break;
                 }
                 RemoveBubble();

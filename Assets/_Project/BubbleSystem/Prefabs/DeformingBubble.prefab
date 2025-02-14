@@ -605,7 +605,7 @@ MonoBehaviour:
   - {fileID: 18700000, guid: 77ff0417f0150a346ae3b6146c1d4884, type: 3}
   - {fileID: 18700000, guid: 77ff0417f0150a346ae3b6146c1d4884, type: 3}
   _animationIndex: 0
-  _randomizeAnimation: 0
+  _randomizeAnimation: 1
 --- !u!114 &560878833201551739
 MonoBehaviour:
   m_ObjectHideFlags: 0

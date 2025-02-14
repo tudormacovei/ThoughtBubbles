@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using tdk.Systems;
+using System;
 
 public class FrameController : Singleton<FrameController>
 {
@@ -59,15 +60,8 @@ public class FrameController : Singleton<FrameController>
 
     public void MoveNext()
     {
-        if (BubbleManager.Instance.IsSpawning)
+        if (!GameManager.Instance.CanModifyGameState())
         {
-            Debug.Log("Bubble Manager is spawning! Cancelling frame move...");
-            return;
-        }
-
-        if (CatEvent.IsCutScene)
-        {
-            Debug.Log("Currently in cat cutscene! Cancelling frame move...");
             return;
         }
 
@@ -94,15 +88,8 @@ public class FrameController : Singleton<FrameController>
 
     public void MovePrev()
     {
-        if (BubbleManager.Instance.IsSpawning)
+        if (!GameManager.Instance.CanModifyGameState())
         {
-            Debug.Log("Bubble Manager is spawning! Cancelling frame move...");
-            return;
-        }
-
-        if (CatEvent.IsCutScene)
-        {
-            Debug.Log("Currently in cat cutscene! Cancelling frame move...");
             return;
         }
 
@@ -173,12 +160,17 @@ public class FrameController : Singleton<FrameController>
 
     public void DisableButtons()
     {
+        Debug.Log("Disabling Buttons!");
         _right.gameObject.SetActive(false);
         _left.gameObject.SetActive(false);
     }
 
     public void EnableButtons()
     {
+        if (GameManager.Instance.IsEnd)
+        {
+            return; // do not reenable buttons if we have reached the end of the game
+        }
         if (_currentFrame == 0)
         {
             _right.gameObject.SetActive(true);
