@@ -30,7 +30,10 @@ public class ItemInteraction : MonoBehaviour
         StartCoroutine(FrameController.SpriteFade(_unInteractable, 1, FrameController.Instance.FadeInDuration));
 
         FrameController.Instance.DisableButtons();
-        CatEvent.Instance.CountTrigger();
+        if (CatEvent.Instance.isActiveAndEnabled)
+        {
+            CatEvent.Instance.CountTrigger();
+        }
         DialogManager.Instance.SpawnDialog(_dialogIndex);
     }
 

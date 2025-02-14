@@ -2000,6 +2000,7 @@ MonoBehaviour:
   _cutscene: {fileID: 505168010}
   _time: 3
   _height: 11
+  _popText: {fileID: 290523887}
 --- !u!1001 &368855270
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using UnityEngine;
 using tdk.Systems;
 using System.Collections;
+using TMPro;
 
 public class CatEvent : Singleton<CatEvent>
 {
@@ -16,6 +17,7 @@ public class CatEvent : Singleton<CatEvent>
     [SerializeField] PlayCutscene _cutscene;
     [SerializeField] float _time;
     [SerializeField] float _height;
+    [SerializeField] TextMeshProUGUI _popText;
 
     public void CountTrigger()
     {
@@ -45,6 +47,8 @@ public class CatEvent : Singleton<CatEvent>
         StartCoroutine(FrameController.SpriteFade(_cat, 1f, 2));
 
         StartCoroutine(MoveOverSeconds(_cat.gameObject.transform, _cat.gameObject.transform.position + new Vector3(0, _height, 0), _time));
+        
+        _popText.CrossFadeColor(Color.black, 3.0f, false, false); // Cat is dead, cannot pop bubbles anymore
     }
 
     IEnumerator MoveOverSeconds(Transform objectToMove, Vector3 end, float seconds)
