@@ -58,10 +58,12 @@ public class DialogManager : MonoBehaviour
         SpawnQuestion(dialogNum);
 
         int choicesLength = _dialogScriptableObject.DialogDatas[dialogNum].choices.Length;
+        Debug.Log("### choiceslength: " + choicesLength);
 
         for (int i = 0; i < choicesLength; i++)
         {
             GameObject choice = GetChoice(_dialogScriptableObject.DialogDatas[dialogNum].damageNumber[i]);
+            Debug.Log("### Damage of choice: " + _dialogScriptableObject.DialogDatas[dialogNum].damageNumber[i]);
 
             choice.GetComponentInChildren<TMP_Text>().text = _dialogScriptableObject.DialogDatas[dialogNum].choices[i];
 
@@ -119,19 +121,10 @@ public class DialogManager : MonoBehaviour
     {
         GameObject choice;
 
-        if (_choicePool.Count > 0)
-        {
-            choice = _choicePool.Dequeue();
-        }
-        else
-        {
-            choice = Instantiate(_choicePrefab, Vector2.zero, Quaternion.identity);
-            choice.transform.SetParent(transform);
-            
-            if (choice.TryGetComponent(out ChoiceSelect cs)) {
-                cs.Damage = damage;
-            }
-        }
+        choice = Instantiate(_choicePrefab, Vector2.zero, Quaternion.identity);
+        choice.transform.SetParent(transform);
+        
+        choice.GetComponent<ChoiceSelect>().Damage = damage;
 
         _activeChoiceList.Add(choice);
         return choice;
@@ -140,7 +133,6 @@ public class DialogManager : MonoBehaviour
     void ReleaseChoice(GameObject choice)
     {
         choice.SetActive(false);
-        _choicePool.Enqueue(choice);
     }
     #endregion
 }

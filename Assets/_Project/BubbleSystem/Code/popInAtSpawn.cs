@@ -90,7 +90,7 @@ public class PopInAtSpawn : MonoBehaviour
                 collider.enabled = true;
             }
             _disabledExternalCollider = true;
-            Debug.Log("Disabled external collider");
+            // Debug.Log("Disabled external collider");
         }
         else if (_isPopping)
         {

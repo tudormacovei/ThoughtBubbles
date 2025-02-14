@@ -81,7 +81,7 @@ public class BubbleManager : MonoBehaviour
     // Spawns a bubble with the specified world-space location, with a random rotation
     public void AddBubble(Vector3 position)
     {
-        // if there are more bubbles spawned than can fit on the screen, end game
+        // if there are more bubbles spawned than can fit on the screen, END GAME
         if (_bubbleCount >= _spawnPositions.Count)
         {
             _endScene.transform.GetChild(0).position = FrameController.Instance.transform.position;
