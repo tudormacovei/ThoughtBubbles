@@ -65,6 +65,9 @@ public class GameManager : MonoBehaviour
             return;
         }
         IsEnd = true;
+
+        BubbleManager.Instance.HandleGameEnd();
+        CatEvent.Instance.HandleGameEnd();
         _endCoverObject.SetActive(true);
         FrameController.Instance.DisableButtons();
         _endScene.transform.GetChild(0).position = FrameController.Instance.transform.position;

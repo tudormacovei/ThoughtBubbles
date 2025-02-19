@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
@@ -26,6 +27,8 @@ public class BubbleManager : MonoBehaviour
 
     bool _isAutoSpawnEnabled;
     [SerializeField] float _bubbleAutoSpawnTimer;
+    [SerializeField] TextMeshProUGUI _bubbleTimerText;
+    [SerializeField] TextMeshProUGUI _hitpointsText;
 
     private void Awake()
     {
@@ -66,7 +69,22 @@ public class BubbleManager : MonoBehaviour
                 yield break;
             }
 
-            yield return new WaitForSeconds(delayTime);
+            _bubbleTimerText.text = "Next Bad Thought in: 5s";
+            yield return new WaitForSeconds(delayTime / 5.0f);
+            yield return new WaitForSeconds(delayTime / 5.0f);
+            _bubbleTimerText.text = "Next Bad Thought in: 4s";
+            yield return new WaitForSeconds(delayTime / 5.0f);
+            _bubbleTimerText.text = "Next Bad Thought in: 3s";
+            yield return new WaitForSeconds(delayTime / 5.0f);
+            _bubbleTimerText.text = "Next Bad Thought in: 2s";
+            yield return new WaitForSeconds(delayTime / 5.0f);
+            _bubbleTimerText.text = "Next Bad Thought in: 1s";
+            yield return new WaitForSeconds(delayTime / 5.0f);
+
+            while (!GameManager.Instance.CanModifyGameState())
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
             if (GameManager.Instance.CanModifyGameState())
             {
                 HandleDamage(1);
@@ -109,7 +127,7 @@ public class BubbleManager : MonoBehaviour
     public void AddBubble(Vector3 position)
     {
         // if there are more bubbles spawned than can fit on the screen, END GAME
-        if (_bubbleCount >= _spawnPositions.Count - 10) // TODO: Remove this
+        if (_bubbleCount >= _spawnPositions.Count)
         {
             GameManager.Instance.EndGame();
             return;
@@ -220,6 +238,14 @@ public class BubbleManager : MonoBehaviour
         StartCoroutine(HandleDamageAsync(amount));
     }
 
+    void UpdateHitpointsText()
+    {
+        _hitpointsText.text = "Bad Thoughts: " + _bubbleCount + "/" + _spawnPositions.Count;
+        Color good = Color.green;
+        Color bad = Color.red;
+        _hitpointsText.color = Color.Lerp(good, bad, (float)_bubbleCount / _spawnPositions.Count);
+    }
+
     public IEnumerator HandleDamageAsync(int amount)
     {
         IsSpawning = true;
@@ -256,6 +282,7 @@ public class BubbleManager : MonoBehaviour
                 RemoveBubble();
                 amount++;
             }
+            UpdateHitpointsText();
 
             yield return new WaitForSeconds(0.2f);
         }
@@ -274,5 +301,11 @@ public class BubbleManager : MonoBehaviour
     public int GetBubbleCount()
     {
         return _bubbleCount;
+    }
+
+    public void HandleGameEnd()
+    {
+        _hitpointsText.enabled = false;
+        _bubbleTimerText.enabled = false;
     }
 }

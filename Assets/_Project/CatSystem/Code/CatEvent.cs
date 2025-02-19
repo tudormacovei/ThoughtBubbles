@@ -30,6 +30,11 @@ public class CatEvent : Singleton<CatEvent>
         }
     }
 
+    public void HandleGameEnd()
+    {
+        _popText.enabled = false;
+    }
+
     IEnumerator CatDiesEvent()
     {
         _anim.SetBool("IsDead", true);
