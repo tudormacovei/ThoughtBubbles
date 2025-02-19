@@ -735,6 +735,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 0
+  _question: You forgot to turn off the tv.. it's nice to keep some sound in the
+    background
+  _choices:
+  - Turn the tv off
+  - Keep it on
+  _damages: 03000000feffffff
   _interactable: {fileID: 951321096}
   _unInteractable: {fileID: 740472052}
 --- !u!1 &89761612
@@ -1640,6 +1646,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 5
+  _question: You are not sure how to take care of the plant... it looks dry
+  _choices:
+  - Give it lots of water
+  - Give it a little bit of water
+  _damages: 03000000feffffff
   _interactable: {fileID: 96808906}
   _unInteractable: {fileID: 1364579052}
 --- !u!1 &173650552
@@ -1690,6 +1701,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 8
+  _question: Haha Bubbles in a clown costume.. so cute!~ I remember this day
+  _choices:
+  - Look around
+  - Recall the memory
+  _damages: 03000000feffffff
   _interactable: {fileID: 1890996727}
   _unInteractable: {fileID: 1083511558}
 --- !u!61 &173650555
@@ -1899,7 +1915,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98d5a99fc109fd54bb3a5bfe15bfcf6c, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -2308,6 +2324,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 12
+  _catSprite: {fileID: -7801552691160513930, guid: 2aae72015d6bf4e42841624d1f75d436, type: 3}
+  _question: Bubble looks at you with his big eyes
+  _choices:
+  - Smile at Bubble
+  - Pet Bubble
+  _damages: fffffffffeffffff
   _delay: 0.4
   _anim: {fileID: 458239863}
   _popText: {fileID: 290523887}
@@ -3670,6 +3692,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 6
+  _question: You haven't showered in a few days because the shower is broken
+  _choices:
+  - Call someone to fix it
+  - Shower at the neighbours
+  _damages: fffffffffeffffff
   _interactable: {fileID: 1661484281}
   _unInteractable: {fileID: 790337729}
 --- !u!4 &667033485 stripped
@@ -3751,7 +3778,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98d5a99fc109fd54bb3a5bfe15bfcf6c, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -4626,6 +4653,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 1
+  _question: There is a funny video on the television... watch some more tv?
+  _choices:
+  - No
+  - Yes
+  _damages: 03000000feffffff
   _interactable: {fileID: 732375733}
   _unInteractable: {fileID: 159027345}
 --- !u!1 &857979908
@@ -5052,6 +5084,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 2
+  _question: You hate the sounds of alarms... and you love sleep
+  _choices:
+  - Sleep as long as you want
+  - Set an alarm for the next day
+  _damages: 0400000001000000
   _interactable: {fileID: 440463652}
   _unInteractable: {fileID: 1311202950}
 --- !u!61 &919876281
@@ -5282,7 +5319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bad Thoughts: 9/15'
+  m_text: 'Bad Thoughts: 0/15'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fe46f32d615e47ba99f7b2bb131d283, type: 2}
   m_sharedMaterial: {fileID: -8180205215873214084, guid: 5fe46f32d615e47ba99f7b2bb131d283, type: 2}
@@ -5291,8 +5328,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190273
-  m_fontColor: {r: 0.7584905, g: 0, b: 0, a: 1}
+    rgba: 4278245376
+  m_fontColor: {r: 0, g: 0.84705883, b: 0, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 0
   m_fontColorGradient:
@@ -5772,7 +5809,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98d5a99fc109fd54bb3a5bfe15bfcf6c, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -6066,7 +6103,6 @@ RectTransform:
   m_Children:
   - {fileID: 674956373}
   - {fileID: 1256794924}
-  - {fileID: 1208815328}
   - {fileID: 290523886}
   - {fileID: 133715336}
   - {fileID: 935610829}
@@ -6218,6 +6254,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4753315781837345537, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753315781837345537, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -6254,6 +6294,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1403330757}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
+      propertyPath: _bigSpriteObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: _playerTransform
       value: 
       objectReference: {fileID: 1403330757}
@@ -6263,7 +6307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: _choiceAnimOffset
-      value: 0.75
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
+      propertyPath: _bigSpriteRenderer
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: _dialogScriptableObject
@@ -6278,8 +6326,12 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
+      propertyPath: _questionPositionOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290040092106380099, guid: 0498dca6852142e4982ffb4c99700232, type: 3}
       propertyPath: _questionPositionOffset.y
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6423,139 +6475,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208262828}
   m_CullTransparentMesh: 0
---- !u!1 &1208815327
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1208815328}
-  - component: {fileID: 1208815333}
-  - component: {fileID: 1208815332}
-  - component: {fileID: 1208815331}
-  m_Layer: 5
-  m_Name: SettingsButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1208815328
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208815327}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 1574419647}
-  m_Father: {fileID: 1185401221}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -10.01}
-  m_SizeDelta: {x: 3, y: 1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1208815331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208815327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1208815332}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: MoveToSettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1208815332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208815327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -511224111, guid: af69926eb0838499b99ec7c57955a8a8, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.01
---- !u!222 &1208815333
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208815327}
-  m_CullTransparentMesh: 1
 --- !u!1 &1224592415
 GameObject:
   m_ObjectHideFlags: 0
@@ -6650,6 +6569,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 3
+  _question: What do you want to make for breakfast
+  _choices:
+  - I guess, I'll make an easy sandwitch
+  - Something fancy
+  _damages: 04000000ffffffff
   _interactable: {fileID: 136107185}
   _unInteractable: {fileID: 864475368}
 --- !u!1 &1229962273
@@ -6839,7 +6763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -3.4}
   m_SizeDelta: {x: 3, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256794927
@@ -8172,142 +8096,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
---- !u!1 &1574419646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1574419647}
-  - component: {fileID: 1574419649}
-  - component: {fileID: 1574419648}
-  m_Layer: 5
-  m_Name: StartButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1574419647
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574419646}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.14999999, y: 0.14999999, z: 0.14999999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1208815328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 15, y: 4.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1574419648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574419646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Settings
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5fe46f32d615e47ba99f7b2bb131d283, type: 2}
-  m_sharedMaterial: {fileID: -8180205215873214084, guid: 5fe46f32d615e47ba99f7b2bb131d283, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281413937
-  m_fontColor: {r: 0.19245279, g: 0.19245279, b: 0.19245279, a: 1}
-  m_enableVertexGradient: 1
-  m_colorMode: 0
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 3.3
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 2
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 3
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1574419649
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574419646}
-  m_CullTransparentMesh: 1
 --- !u!4 &1581496483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2275240243274226359, guid: acdfc9ff70c89f04d9ebe75b8234b752, type: 3}
@@ -8434,6 +8222,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 9
+  _question: I'm feeling nauseous... I don't think I can't drink or eat anything
+  _choices:
+  - I don't want to drink water
+  - Still drink some water
+  _damages: 01000000ffffffff
   _interactable: {fileID: 1538794212}
   _unInteractable: {fileID: 1869343699}
 --- !u!61 &1595479329
@@ -9348,7 +9141,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 1191600859
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1786413804
@@ -10161,6 +9954,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 10
+  _question: I don't feel very pretty today..
+  _choices:
+  - Don't look at yourself
+  - Stare in the mirror
+  _damages: 0300000005000000
   _interactable: {fileID: 1875105834}
   _unInteractable: {fileID: 878109398}
 --- !u!1 &1988199039
@@ -10346,6 +10144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 7
+  _question: I'm not going out today....
+  _choices:
+  - Don't brush your teeth
+  - Brush your teeth
+  _damages: 03000000feffffff
   _interactable: {fileID: 63479831}
   _unInteractable: {fileID: 1754885367}
 --- !u!1001 &2038272604
@@ -10515,6 +10318,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 4
+  _question: Should I take my pills or make some tea?
+  _choices:
+  - Make tea
+  - Take pills
+  _damages: 01000000fcffffff
   _interactable: {fileID: 1071982891}
   _unInteractable: {fileID: 210730217}
 --- !u!4 &2078747246 stripped
@@ -10679,7 +10487,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98d5a99fc109fd54bb3a5bfe15bfcf6c, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -10780,7 +10588,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -10835,7 +10643,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -10969,7 +10777,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -11265,7 +11073,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -11369,7 +11177,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -11457,7 +11265,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -11512,7 +11320,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -368048953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}

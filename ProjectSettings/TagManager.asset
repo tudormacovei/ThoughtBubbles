@@ -54,14 +54,14 @@ TagManager:
   - name: Cat
     uniqueID: 2048849147
     locked: 0
+  - name: Bubbles
+    uniqueID: 2579291137
+    locked: 0
   - name: Border
     uniqueID: 3926918343
     locked: 0
   - name: Arrow
     uniqueID: 1191600859
-    locked: 0
-  - name: Bubbles
-    uniqueID: 2579291137
     locked: 0
   - name: Crying
     uniqueID: 3473629145

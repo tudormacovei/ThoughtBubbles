@@ -1,9 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemInteraction : MonoBehaviour
 {
-    [SerializeField] int _dialogIndex;
+    [SerializeField] int _dialogIndex; // This will be made legacy
+
+    [SerializeField] string _question;
+    [SerializeField] List<string> _choices;
+    [SerializeField] List<int> _damages;
 
     [SerializeField] SpriteRenderer _interactable;
     [SerializeField] SpriteRenderer _unInteractable;
@@ -17,9 +22,7 @@ public class ItemInteraction : MonoBehaviour
 
     void OnMouseDown()
     {
-        //if (CatEvent.IsCutScene) return;
-
-        if (FrameController.Instance.Moving)
+        if (!GameManager.Instance.CanModifyGameState())
         {
             return;
         }
@@ -34,7 +37,7 @@ public class ItemInteraction : MonoBehaviour
         {
             CatEvent.Instance.CountTrigger();
         }
-        DialogManager.Instance.SpawnDialog(_dialogIndex);
+        DialogManager.Instance.SpawnDialog(_question, _choices, _damages, _interactable.sprite);
     }
 
     IEnumerator SpriteFade(SpriteRenderer sr, float endValue, float duration)

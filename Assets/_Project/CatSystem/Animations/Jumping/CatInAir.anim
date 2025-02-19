@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CatJumping
+  m_Name: CatInAir
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 3525966213238636157, guid: 73ca71c4d14675a4aaee597cbd256740, type: 3}
+      value: {fileID: -6297461646351786961, guid: 05368f82e5e7ae846bc791a610becfc0, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,7 +44,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 3525966213238636157, guid: 73ca71c4d14675a4aaee597cbd256740, type: 3}
+    - {fileID: -6297461646351786961, guid: 05368f82e5e7ae846bc791a610becfc0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

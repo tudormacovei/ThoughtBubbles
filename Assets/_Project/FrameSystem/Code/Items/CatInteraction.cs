@@ -1,5 +1,6 @@
 using Mono.Cecil;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,12 @@ using UnityEngine.InputSystem;
 public class CatInteraction : MonoBehaviour
 {
     [SerializeField] int _dialogIndex;
+
+    [SerializeField] Sprite _catSprite;
+    [SerializeField] string _question;
+    [SerializeField] List<string> _choices;
+    [SerializeField] List<int> _damages;
+
     [SerializeField] float _delay;
     [SerializeField] Animator _anim;
     [SerializeField] TextMeshProUGUI _popText;
@@ -16,19 +23,19 @@ public class CatInteraction : MonoBehaviour
     float _cooldown = 5.0f;
     float _elapsedTime = 0.0f;
 
-    float _animDuration = 3.0f; // TODO: Serialize?
+    float _animDuration = 2.5f; // TODO: Serialize?
     float _elapsedAnimTime;
     Vector3 _startPos;
     bool _didRemoveBubble;
 
-    IEnumerator HandleCatPettingAsync(float seconds, int dialogIndex)
+    IEnumerator HandleCatPettingAsync(float seconds)
     {
         _anim.SetBool("IsPetting", true);
         yield return new WaitForSeconds(seconds); // wait before spawning Dialog box
         
         if (!_didInteract)
         {
-            DialogManager.Instance.SpawnDialog(dialogIndex);
+            DialogManager.Instance.SpawnDialog(_question, _choices, _damages, _catSprite);
             _didInteract = true;
         }
 
@@ -60,9 +67,10 @@ public class CatInteraction : MonoBehaviour
     }
     IEnumerator AnimateBubblePop(Vector3 bubblePos, int BubbleIndex)
     {
+        var adjustedAnimDuration = _animDuration - (BubbleIndex / 15.0f) * 1.5f;
         while (enabled)
         {
-            if (_elapsedAnimTime > _animDuration)
+            if (_elapsedAnimTime > adjustedAnimDuration)
             {
                 // ON EXIT
                 _elapsedAnimTime = 0.0f;
@@ -77,25 +85,31 @@ public class CatInteraction : MonoBehaviour
             Debug.Log("Incrementing Time: " + _elapsedAnimTime);
             _elapsedAnimTime += Time.deltaTime;
 
-            if (_elapsedAnimTime / _animDuration <= 0.2f) // sit still for the first part of the anim
+            if (_elapsedAnimTime / adjustedAnimDuration <= 0.2f) // sit still for the first part of the anim
             {
                 _elapsedTime = 0.0f; // To update on-screen text immediately when cat is clicked on
                 Debug.Log("Branch 1: Sitting");
             }
-            else if (_elapsedAnimTime / _animDuration <= 0.6f)
+            else if (_elapsedAnimTime / adjustedAnimDuration <= 0.6f)
             {
-                transform.position = Vector3.Lerp(_startPos, bubblePos, ((_elapsedAnimTime / _animDuration) - 0.3f) * 3.0f);
+                _anim.SetBool("IsJumping", true);
+                _anim.SetBool("IsPreparing", false);
+                transform.position = Vector3.Lerp(_startPos, bubblePos, ((_elapsedAnimTime / adjustedAnimDuration) - 0.3f) * 3.0f);
                 Debug.Log("Branch 2: Moving up");
+                if (_elapsedAnimTime / adjustedAnimDuration >= 0.5f)
+                {
+                    if (!_didRemoveBubble)
+                    {
+                        BubbleManager.Instance.RemoveBubble(BubbleIndex);
+                        _didRemoveBubble = true;
+                    }
+                }
             }
             else
             {
                 Debug.Log("Branch 3: Going Down");
-                if (!_didRemoveBubble)
-                {
-                    BubbleManager.Instance.RemoveBubble(BubbleIndex);
-                    _didRemoveBubble = true;
-                }
-                transform.position = Vector3.Lerp(bubblePos, _startPos, ((_elapsedAnimTime / _animDuration) - 0.6f) * 3.0f);
+
+                transform.position = Vector3.Lerp(bubblePos, _startPos, ((_elapsedAnimTime / adjustedAnimDuration) - 0.6f) * 3.0f);
             }
             yield return 0; // Wait until next frame
         }
@@ -106,7 +120,7 @@ public class CatInteraction : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // Pet Bubbles
         {
-            StartCoroutine(HandleCatPettingAsync(_delay, _dialogIndex));
+            StartCoroutine(HandleCatPettingAsync(_delay));
         }
         else if (Input.GetMouseButtonDown(1) && _elapsedTime > _cooldown && BubbleManager.Instance.GetBubbleCount() > 0 && !IsCatAnimPlaying())
         {
@@ -118,7 +132,7 @@ public class CatInteraction : MonoBehaviour
             _startPos = transform.position;
             _elapsedAnimTime = 0.0f;
             _didRemoveBubble = false;
-            _anim.SetBool("IsJumping", true);
+            _anim.SetBool("IsPreparing", true);
             StartCoroutine(AnimateBubblePop(bubblePosition, bubbleIndex));
         }
     }

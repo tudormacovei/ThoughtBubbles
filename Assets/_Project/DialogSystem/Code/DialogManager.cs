@@ -6,14 +6,10 @@ public class DialogManager : MonoBehaviour
 {
     public static DialogManager Instance;
 
-    [Header("ScriptableObject")]
-    [SerializeField] DialogScriptableObjectScript _dialogScriptableObject;
-
     [Header("Choice")]
     [SerializeField] GameObject _choicePrefab;
     [SerializeField] float _choiceAnimOffset;
     [SerializeField] List<GameObject> _activeChoiceList = new List<GameObject>();
-    private Queue<GameObject> _choicePool = new Queue<GameObject>();
 
     [Header("Question")]
     [SerializeField] GameObject _questionPrefab;
@@ -22,9 +18,6 @@ public class DialogManager : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] Transform _playerTransform;
-
-    [Header("Test")]
-    [SerializeField] int _myNum; // TODO: is this necessary?
 
     void Awake()
     {
@@ -38,56 +31,35 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    [ContextMenu("SpawnDialogTest")]
-    void SpawnDialogTest()
+    public void SpawnDialog(string question, List<string> choices, List<int> damages, Sprite bigSprite)
     {
-        SpawnDialog(_myNum);
-    }
+        SpawnQuestion(question);
 
-    public void SpawnDialog(int dialogNum)
-    {
-        if (dialogNum < 0 || dialogNum >= _dialogScriptableObject.DialogDatas.Length)
+        for (int i = 0; i < choices.Count; i++)
         {
-            Debug.LogError("The value of dialogNum is out of dialogScriptableObject.dialogDatas range!");
-            return;
-        }
+            GameObject choice = GetChoice(damages[i]);
 
-        // not necessary, the dialogManager is responsible for its own position now
-        // GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(playerTransform.position);
-
-        SpawnQuestion(dialogNum);
-
-        int choicesLength = _dialogScriptableObject.DialogDatas[dialogNum].choices.Length;
-        Debug.Log("### choiceslength: " + choicesLength);
-
-        for (int i = 0; i < choicesLength; i++)
-        {
-            GameObject choice = GetChoice(_dialogScriptableObject.DialogDatas[dialogNum].damageNumber[i]);
-            Debug.Log("### Damage of choice: " + _dialogScriptableObject.DialogDatas[dialogNum].damageNumber[i]);
-
-            choice.GetComponentInChildren<TMP_Text>().text = _dialogScriptableObject.DialogDatas[dialogNum].choices[i];
-
+            choice.GetComponentInChildren<TMP_Text>().text = choices[i];
             choice.SetActive(true);
 
-            int distanceY = i - choicesLength / 2;
-            if (choicesLength % 2 == 0 && i >= choicesLength / 2) // even number correction
+            int distanceY = i - choices.Count / 2;
+            if (choices.Count % 2 == 0 && i >= choices.Count / 2) // even number correction
             {
                 distanceY++;
             }
-
             StartCoroutine(choice.GetComponent<ChoiceMove>().CoAnimateButton(distanceY * _choiceAnimOffset));
         }
     }
 
-    void SpawnQuestion(int dialogNum)
+    void SpawnQuestion(string question)
     {
-        if(_question == null)
+        if (_question == null)
         {
             _question = Instantiate(_questionPrefab, Vector2.zero, Quaternion.identity);
             _question.transform.SetParent(transform);
         }
         _question.GetComponent<RectTransform>().anchoredPosition = _questionPositionOffset;
-        _question.GetComponentInChildren<TMP_Text>().text = _dialogScriptableObject.DialogDatas[dialogNum].question;
+        _question.GetComponentInChildren<TMP_Text>().text = question;
 
         _question.SetActive(true);
     }
