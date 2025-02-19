@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using tdk.Systems;
-using System;
 
 public class FrameController : Singleton<FrameController>
 {
