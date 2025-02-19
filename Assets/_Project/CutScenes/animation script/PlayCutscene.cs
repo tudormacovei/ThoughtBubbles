@@ -29,8 +29,12 @@ public class PlayCutscene : MonoBehaviour
 
     void StopVideo()
     {
-        videoPlayer.Stop();
-        videoSquare.SetActive(false);
+        videoPlayer.Pause();
+        // TODO: Handle bug if cat death cutscene is triggered at the same time as end cutscece
+        if(!GameManager.Instance.IsEnd) 
+        {
+            videoSquare.SetActive(false);
+        }
     }
 }
 

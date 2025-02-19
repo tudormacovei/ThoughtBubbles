@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         IsEnd = true;
+        _endCoverObject.SetActive(true);
         FrameController.Instance.DisableButtons();
         _endScene.transform.GetChild(0).position = FrameController.Instance.transform.position;
         _endScene.PlayVideo();
@@ -73,7 +75,8 @@ public class GameManager : MonoBehaviour
 
     public void MoveToMenu()
     {
-        MoveTo(MainMenuCameraLocation);
+        // MoveTo(MainMenuCameraLocation);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void MoveToSettings()
@@ -115,10 +118,7 @@ public class GameManager : MonoBehaviour
             Camera.main.transform.position = Vector3.Lerp(StartPosition, position, t);
             yield return 1; // To go to next frame
         }
-        if (IsEnd)
-        {
-            _endCoverObject.SetActive(true);
-        }
+
         yield break;
     }
 }

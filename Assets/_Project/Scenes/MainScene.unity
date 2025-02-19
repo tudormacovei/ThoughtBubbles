@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 46587698}
   - component: {fileID: 46587697}
   - component: {fileID: 46587696}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,8 +146,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46587694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.08404034}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1208262829}
@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 930, y: 540}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &46587696
 MonoBehaviour:
@@ -220,7 +220,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 1444317341
+  m_SortingLayerID: 1191600859
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &60918722
@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 138724084}
   - component: {fileID: 138724086}
   - component: {fileID: 138724085}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: End Screen Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1981,7 +1981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 310058621}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Screen_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1997,7 +1997,7 @@ Transform:
   m_GameObject: {fileID: 310058620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: -0.08404034}
+  m_LocalPosition: {x: 50, y: 0, z: -0.08404034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4106,7 +4106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 763577466}
   - component: {fileID: 763577467}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EndGameCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4123,7 +4123,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -29.7, y: 0.1, z: 0.08404034}
-  m_LocalScale: {x: 37.53, y: 11.95, z: -16.24}
+  m_LocalScale: {x: 19.71451, y: 11.95, z: -16.24}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 310058621}
@@ -4503,7 +4503,7 @@ GameObject:
   - component: {fileID: 857979909}
   - component: {fileID: 857979911}
   - component: {fileID: 857979910}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Continue Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4549,7 +4549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click to go to main menu...
+  m_text: Click to reload game...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fe46f32d615e47ba99f7b2bb131d283, type: 2}
   m_sharedMaterial: {fileID: -8180205215873214084, guid: 5fe46f32d615e47ba99f7b2bb131d283, type: 2}
@@ -5118,13 +5118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5425ed30ac4e1c46ad6f106c769d03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenuCameraLocation: {x: 0, y: 0, z: -10}
+  MainMenuCameraLocation: {x: 0, y: 45, z: -10}
   SettingsCameraLocation: {x: 0, y: 45, z: -10}
   GameCameraLocation: {x: 0, y: 0, z: -10}
   TutorialCameraLocation: {x: 0, y: 35, z: -10}
-  EndScreenLocation: {x: 30, y: 0, z: -10}
+  EndScreenLocation: {x: 50, y: 0, z: -10}
   _endScene: {fileID: 505168012}
   _endCoverObject: {fileID: 763577465}
+  _endMoveDelay: 19
   TransitionTime: 3
   IsEnd: 0
 --- !u!4 &936942324
@@ -6028,7 +6029,7 @@ GameObject:
   - component: {fileID: 1208262832}
   - component: {fileID: 1208262831}
   - component: {fileID: 1208262830}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ContinueToGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6100,7 +6101,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 936942323}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MoveToGame
+        m_MethodName: MoveToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9095,8 +9096,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.051838, y: 0.020584399, z: 0.02}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 703927804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
