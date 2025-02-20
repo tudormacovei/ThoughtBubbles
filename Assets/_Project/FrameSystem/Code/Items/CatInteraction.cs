@@ -16,6 +16,10 @@ public class CatInteraction : MonoBehaviour
     [SerializeField] Animator _anim;
     [SerializeField] TextMeshProUGUI _popText;
 
+    [Header("Tutorial")]
+    [SerializeField] TextMeshProUGUI _tutorialTextCat;
+    [SerializeField] TextMeshProUGUI _tutorialTextPop;
+
     bool _didInteract = false;
 
     float _cooldown = 5.0f;
@@ -132,6 +136,12 @@ public class CatInteraction : MonoBehaviour
             _didRemoveBubble = false;
             _anim.SetBool("IsPreparing", true);
             StartCoroutine(AnimateBubblePop(bubblePosition, bubbleIndex));
+
+            if (_tutorialTextCat.alpha > 0.9f)
+            {
+                _tutorialTextCat.CrossFadeAlpha(0.0f, 0.2f, false);
+                _tutorialTextPop.CrossFadeAlpha(0.0f, 8.0f, false );
+            }
         }
     }
 

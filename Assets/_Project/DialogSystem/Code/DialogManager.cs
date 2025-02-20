@@ -73,6 +73,11 @@ public class DialogManager : MonoBehaviour
             ReleaseChoice(choice);
         }
         _activeChoiceList.Clear();
+
+        if (CatEvent.Instance.isActiveAndEnabled)
+        {
+            CatEvent.Instance.CountTrigger(); // count towards cat trigger when choice is made
+        }
     }
 
     public void Move(bool moveRight)

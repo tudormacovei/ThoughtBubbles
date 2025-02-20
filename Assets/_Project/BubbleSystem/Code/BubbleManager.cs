@@ -25,6 +25,9 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] float _bubbleAutoSpawnTimer;
     [SerializeField] TextMeshProUGUI _bubbleTimerText;
     [SerializeField] TextMeshProUGUI _hitpointsText;
+    [SerializeField] TextMeshProUGUI _tutorialAutoSpawnText;
+
+    int _autoSpawned;
 
     private void Awake()
     {
@@ -43,6 +46,7 @@ public class BubbleManager : MonoBehaviour
     {
         _bubbleList = new List<GameObject>();
         _bubbleCount = 0;
+        _autoSpawned = 0;
         
         // sort spawn positions by y-position, negative so the values with the highest y are first
         _spawnPositions = _spawnPositions.OrderBy(go => -go.transform.position.y).ToList();
@@ -75,15 +79,20 @@ public class BubbleManager : MonoBehaviour
             _bubbleTimerText.text = "Next Bad Thought in: 2s";
             yield return new WaitForSeconds(delayTime / 5.0f);
             _bubbleTimerText.text = "Next Bad Thought in: 1s";
-            yield return new WaitForSeconds(delayTime / 5.0f);
+            yield return new WaitForSeconds(delayTime / 10.0f);
 
             while (!GameManager.Instance.CanModifyGameState())
             {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
             if (GameManager.Instance.CanModifyGameState())
             {
+                if (_autoSpawned == 3)
+                {
+                    _tutorialAutoSpawnText.CrossFadeAlpha(0.0f, 5.0f, false);
+                }
                 HandleDamage(1);
+                _autoSpawned++;
             }
         }
         yield return null;
@@ -291,6 +300,7 @@ public class BubbleManager : MonoBehaviour
             return;
         }
         RemoveBubble(index);
+        UpdateHitpointsText();
         _timeSinceCatPop = 0.0f;
     }
     

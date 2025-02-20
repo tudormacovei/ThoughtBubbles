@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using tdk.Systems;
+using TMPro;
 
 public class FrameController : Singleton<FrameController>
 {
@@ -25,6 +26,10 @@ public class FrameController : Singleton<FrameController>
 
     [SerializeField] float _fadeInDuration;
     [SerializeField] float _fadeOutDuration;
+
+    [Header("Tutorial")]
+    [SerializeField] TextMeshProUGUI _tutorialArrowText;
+
 
     public float FadeInDuration => _fadeInDuration;
 
@@ -59,16 +64,11 @@ public class FrameController : Singleton<FrameController>
 
     public void MoveNext()
     {
-        if (!GameManager.Instance.CanModifyGameState())
-        {
-            return;
-        }
-
         if (_currentFrame == _frames.Length - 1) return;
 
         int previousFrame = _currentFrame;
 
-        if (!_isMoving)
+        if (GameManager.Instance.CanModifyGameState())
         {
             _currentFrame++;
 
@@ -82,21 +82,21 @@ public class FrameController : Singleton<FrameController>
 
             StartCoroutine(MoveOverSeconds(transform, _frames[_currentFrame].position, _moveDuration));
             StartCoroutine(BubbleManager.Instance.Move(true));
+
+            if (_tutorialArrowText.enabled)
+            {
+                _tutorialArrowText.enabled = false;
+            }
         }
     }
 
     public void MovePrev()
     {
-        if (!GameManager.Instance.CanModifyGameState())
-        {
-            return;
-        }
-
         if (_currentFrame == 0) return;
 
         int previousFrame = _currentFrame;
 
-        if (!_isMoving)
+        if (GameManager.Instance.CanModifyGameState())
         {
             _currentFrame--;
 
