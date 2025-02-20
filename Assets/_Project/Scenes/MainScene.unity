@@ -692,7 +692,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1603,7 +1603,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1724,7 +1724,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2352,7 +2352,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2394,6 +2394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d00a038595fc04484c1b870b0a4d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCutScene: 0
   _triggerThreshold: 6
   _anim: {fileID: 458239863}
   _cat: {fileID: 458239862}
@@ -3652,7 +3653,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -4614,7 +4615,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5111,7 +5112,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -6533,7 +6534,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -8312,7 +8313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3832692247130005312, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.88
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 3832692247130005312, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8332,7 +8333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6885196659839765410, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.73
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 6885196659839765410, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8344,7 +8345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7210459909729585135, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: 7210459909729585135, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8360,7 +8361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7895602591644543431, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 7895602591644543431, guid: 326a58779b4e5dd4dbe98c68b8c6bb29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8528,7 +8529,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -10330,7 +10331,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -10414,7 +10415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.24, y: -330.47336}
+  m_AnchoredPosition: {x: -27.24, y: -330}
   m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947121960
@@ -10656,7 +10657,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -10830,7 +10831,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

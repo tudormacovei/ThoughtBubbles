@@ -70,6 +70,7 @@ public class FrameController : Singleton<FrameController>
 
         if (GameManager.Instance.CanModifyGameState())
         {
+            _isMoving = true;
             _currentFrame++;
 
             _sprite.flipX = false;
@@ -98,6 +99,7 @@ public class FrameController : Singleton<FrameController>
 
         if (GameManager.Instance.CanModifyGameState())
         {
+            _isMoving = true;
             _currentFrame--;
 
             _sprite.flipX = true;
@@ -120,7 +122,6 @@ public class FrameController : Singleton<FrameController>
 
         _anim.SetBool("IsWalking", true);
 
-        _isMoving = true;
         float elapsedTime = 0;
         Vector3 startingPos = objectToMove.transform.position;
 
@@ -137,10 +138,10 @@ public class FrameController : Singleton<FrameController>
 
         objectToMove.transform.position = end;
         objectToMove.transform.position = new Vector3(objectToMove.transform.position.x, objectToMove.transform.position.y, 0);
-        _isMoving = false;
 
         _anim.SetBool("IsWalking", false);
 
+        _isMoving = false;
         EnableButtons();
     }
 

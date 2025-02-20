@@ -11,6 +11,7 @@ public class BubbleMaterialSetup : MonoBehaviour
     int _animationIndex;
 
     [SerializeField] bool _randomizeAnimation;
+    [SerializeField] float _innerOpacity;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +36,7 @@ public class BubbleMaterialSetup : MonoBehaviour
         properties.SetFloat("_StartTime", Random.Range(0.0f, 4.0f));
         properties.SetTexture("_Anim", _tex[idx]);
         properties.SetTexture("_AnimInt", texInterior[idx]);
+        properties.SetFloat("_InnerOpacity", _innerOpacity);
 
         // Apply the property block to the renderer
         GetComponent<Renderer>().SetPropertyBlock(properties);

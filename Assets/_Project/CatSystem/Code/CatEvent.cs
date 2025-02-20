@@ -5,7 +5,7 @@ using TMPro;
 
 public class CatEvent : Singleton<CatEvent>
 {
-    public static bool IsCutScene = false;
+    public bool IsCutScene = false;
     int _triggerCounter;
 
     [Header("General")]

@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     public bool CanModifyGameState()
     {
-        return !(IsEnd || CatEvent.IsCutScene || BubbleManager.IsSpawning || FrameController.Instance.Moving); 
+        return !(IsEnd || CatEvent.Instance.IsCutScene || BubbleManager.Instance.IsSpawning || FrameController.Instance.Moving); 
     }
 
     public void EndGame()

@@ -19,7 +19,7 @@ public class BubbleManager : MonoBehaviour
 
     float _timeSinceCatPop = 0.0f;
 
-    public static bool IsSpawning { get; private set; }
+    public bool IsSpawning { get; private set; }
 
     bool _isAutoSpawnEnabled;
     [SerializeField] float _bubbleAutoSpawnTimer;
@@ -114,8 +114,9 @@ public class BubbleManager : MonoBehaviour
         {
             IsSpawning = true;
             Vector3 position = _spawnPositions[_bubbleList.Count % _spawnPositions.Count].transform.position;
+            
+            _bubbleCount--; // this is modified by the line below, we don't want that
             AddBubble(position);
-            _bubbleCount--; // this is modified by the line above, we don't want that
 
             if (_bubbleList.Count == _bubbleCount)
             {
@@ -221,6 +222,7 @@ public class BubbleManager : MonoBehaviour
 
     public IEnumerator Move(bool moveRight)
     {
+        IsSpawning = true;
         RemoveAllBubbles();
         yield return new WaitForSeconds(0.7f);
 
@@ -238,7 +240,8 @@ public class BubbleManager : MonoBehaviour
     }
 
     public void HandleDamage(int amount)
-    {     
+    {
+        IsSpawning = true;
         // this function exists to bind the coroutine below to this object
         StartCoroutine(HandleDamageAsync(amount));
     }
@@ -253,8 +256,6 @@ public class BubbleManager : MonoBehaviour
 
     public IEnumerator HandleDamageAsync(int amount)
     {
-        IsSpawning = true;
-
         FrameController.Instance.DisableButtons();
 
         while (enabled)

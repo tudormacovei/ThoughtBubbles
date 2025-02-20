@@ -17,6 +17,9 @@
         },
         {
             "m_Id": "7273822427784c368c16db5e9b65b9c8"
+        },
+        {
+            "m_Id": "be0079a1bc6e459a81a2dbf9fcc97a59"
         }
     ],
     "m_Keywords": [],
@@ -128,6 +131,9 @@
         },
         {
             "m_Id": "9cc45caee13c40f18457c934d24fb3c6"
+        },
+        {
+            "m_Id": "553662f5012d4c0c805a540383416b07"
         }
     ],
     "m_GroupDatas": [],
@@ -257,6 +263,20 @@
                     "m_Id": "cea1e911b1444ae7afef1b7af672f8b5"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "553662f5012d4c0c805a540383416b07"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "cd916c37755c438aa60e6382f1d27c3f"
+                },
+                "m_SlotId": 3
             }
         },
         {
@@ -1149,6 +1169,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "1a0f3ab223f644bd92371fe3d155e3c3",
+    "m_Id": 0,
+    "m_DisplayName": "InnerOpacity",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "1b516a790c4f40a9b17bc6e909aeb7e2",
     "m_Group": {
@@ -1986,6 +2021,42 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "553662f5012d4c0c805a540383416b07",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 394.4000244140625,
+            "y": 961.5999755859375,
+            "width": 116.0,
+            "height": 33.5999755859375
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "1a0f3ab223f644bd92371fe3d155e3c3"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "be0079a1bc6e459a81a2dbf9fcc97a59"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "5c82392f38a54940b97ee89b0ae0babf",
     "m_Id": 0,
@@ -2019,7 +2090,7 @@
     "m_ShaderOutputName": "A",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 1.100000023841858,
+        "e00": 1.2000000476837159,
         "e01": 0.0,
         "e02": 0.0,
         "e03": 0.0,
@@ -2867,7 +2938,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Opacity",
     "m_StageCapability": 3,
-    "m_Value": 1.0,
+    "m_Value": 0.800000011920929,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
@@ -3481,6 +3552,34 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "be0079a1bc6e459a81a2dbf9fcc97a59",
+    "m_Guid": {
+        "m_GuidSerialized": "641f0254-bfb5-4367-b41e-956ccc477354"
+    },
+    "m_Name": "InnerOpacity",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "InnerOpacity",
+    "m_DefaultReferenceName": "_InnerOpacity",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 1.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "bed553da15ff492f86bbe1885e492b6b",
@@ -3578,6 +3677,9 @@
         },
         {
             "m_Id": "7273822427784c368c16db5e9b65b9c8"
+        },
+        {
+            "m_Id": "be0079a1bc6e459a81a2dbf9fcc97a59"
         }
     ]
 }
