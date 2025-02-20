@@ -22,7 +22,7 @@ public class CatInteraction : MonoBehaviour
 
     bool _didInteract = false;
 
-    float _cooldown = 5.0f;
+    [SerializeField] float _popCooldown = 5.0f;
     float _elapsedTime = 0.0f;
 
     float _animDuration = 2.5f; // TODO: Serialize?
@@ -50,15 +50,15 @@ public class CatInteraction : MonoBehaviour
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
-        if (_elapsedTime / _cooldown < 0.2f)
+        if (_elapsedTime / _popCooldown < 0.2f)
         {
             _popText.text = "WAIT......";
         }
-        else if (_elapsedTime / _cooldown < 0.5f)
+        else if (_elapsedTime / _popCooldown < 0.5f)
         {
             _popText.text = "WAIT....";
         }
-        else if (_elapsedTime / _cooldown < 0.8f)
+        else if (_elapsedTime / _popCooldown < 0.8f)
         {
             _popText.text = "WAIT..";
         }
@@ -67,6 +67,7 @@ public class CatInteraction : MonoBehaviour
             _popText.text = "POP!";
         }
     }
+
     IEnumerator AnimateBubblePop(Vector3 bubblePos, int BubbleIndex)
     {
         var adjustedAnimDuration = _animDuration - (BubbleIndex / 15.0f) * 1.5f;
@@ -102,7 +103,7 @@ public class CatInteraction : MonoBehaviour
                 {
                     if (!_didRemoveBubble)
                     {
-                        BubbleManager.Instance.RemoveBubble(BubbleIndex);
+                        BubbleManager.Instance.PopClick(BubbleIndex);
                         _didRemoveBubble = true;
                     }
                 }
@@ -124,7 +125,7 @@ public class CatInteraction : MonoBehaviour
         {
             StartCoroutine(HandleCatPettingAsync(_delay));
         }
-        else if (Input.GetMouseButtonDown(1) && _elapsedTime > _cooldown && BubbleManager.Instance.GetBubbleCount() > 0 && !IsCatAnimPlaying())
+        else if (Input.GetMouseButtonDown(1) && _elapsedTime > _popCooldown && BubbleManager.Instance.GetBubbleCount() > 0 && !IsCatAnimPlaying())
         {
             int bubbleIndex = BubbleManager.Instance.GetBubbleCount() - 1;
 

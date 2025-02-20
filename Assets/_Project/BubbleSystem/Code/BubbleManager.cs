@@ -12,12 +12,8 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] List<GameObject> _spawnPositions;
     [SerializeField] float _spawnDelay;
 
-    [SerializeField] float _catPopCooldown;
-
     List<GameObject> _bubbleList; // all spawned bubbles
     int _bubbleCount; // tracks the number of bubbles that still exist in the level, both spawned or unspawned
-
-    float _timeSinceCatPop = 0.0f;
 
     public bool IsSpawning { get; private set; }
 
@@ -96,12 +92,6 @@ public class BubbleManager : MonoBehaviour
             }
         }
         yield return null;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        _timeSinceCatPop += Time.deltaTime;
     }
 
     IEnumerator SpawnBubblesRoutine()
@@ -296,13 +286,8 @@ public class BubbleManager : MonoBehaviour
 
     public void PopClick(int index)
     {
-        if (_timeSinceCatPop >= _catPopCooldown)
-        {
-            return;
-        }
         RemoveBubble(index);
         UpdateHitpointsText();
-        _timeSinceCatPop = 0.0f;
     }
     
     public int GetBubbleCount()
