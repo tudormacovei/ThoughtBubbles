@@ -1172,7 +1172,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "1a0f3ab223f644bd92371fe3d155e3c3",
     "m_Id": 0,
-    "m_DisplayName": "InnerOpacity",
+    "m_DisplayName": "_InnerOpacity",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -3558,9 +3558,9 @@
     "m_Guid": {
         "m_GuidSerialized": "641f0254-bfb5-4367-b41e-956ccc477354"
     },
-    "m_Name": "InnerOpacity",
+    "m_Name": "_InnerOpacity",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "InnerOpacity",
+    "m_RefNameGeneratedByDisplayName": "_InnerOpacity",
     "m_DefaultReferenceName": "_InnerOpacity",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,

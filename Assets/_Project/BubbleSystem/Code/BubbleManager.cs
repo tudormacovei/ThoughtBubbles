@@ -23,6 +23,8 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _hitpointsText;
     [SerializeField] TextMeshProUGUI _tutorialAutoSpawnText;
 
+    [SerializeField] GameObject _sliderObject;
+
     int _autoSpawned;
 
     private void Awake()
@@ -66,8 +68,7 @@ public class BubbleManager : MonoBehaviour
             }
 
             _bubbleTimerText.text = "Next Bad Thought in: 5s";
-            yield return new WaitForSeconds(delayTime / 5.0f);
-            yield return new WaitForSeconds(delayTime / 5.0f);
+            yield return new WaitForSeconds(delayTime / 4.0f);
             _bubbleTimerText.text = "Next Bad Thought in: 4s";
             yield return new WaitForSeconds(delayTime / 5.0f);
             _bubbleTimerText.text = "Next Bad Thought in: 3s";
@@ -75,7 +76,7 @@ public class BubbleManager : MonoBehaviour
             _bubbleTimerText.text = "Next Bad Thought in: 2s";
             yield return new WaitForSeconds(delayTime / 5.0f);
             _bubbleTimerText.text = "Next Bad Thought in: 1s";
-            yield return new WaitForSeconds(delayTime / 10.0f);
+            yield return new WaitForSeconds(delayTime / 5.0f);
 
             while (!GameManager.Instance.CanModifyGameState())
             {
@@ -89,6 +90,8 @@ public class BubbleManager : MonoBehaviour
                 }
                 HandleDamage(1);
                 _autoSpawned++;
+
+                _sliderObject.GetComponent<SliderMovement>().SetTimeOfDay((_autoSpawned / 40.0f));
             }
         }
         yield return null;
@@ -231,7 +234,6 @@ public class BubbleManager : MonoBehaviour
 
     public void HandleDamage(int amount)
     {
-        IsSpawning = true;
         // this function exists to bind the coroutine below to this object
         StartCoroutine(HandleDamageAsync(amount));
     }
@@ -246,6 +248,7 @@ public class BubbleManager : MonoBehaviour
 
     public IEnumerator HandleDamageAsync(int amount)
     {
+        IsSpawning = true;
         FrameController.Instance.DisableButtons();
 
         while (enabled)
@@ -299,5 +302,6 @@ public class BubbleManager : MonoBehaviour
     {
         _hitpointsText.enabled = false;
         _bubbleTimerText.enabled = false;
+        _sliderObject.SetActive(false);
     }
 }
