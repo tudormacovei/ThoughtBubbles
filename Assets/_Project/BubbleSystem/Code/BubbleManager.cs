@@ -138,7 +138,7 @@ public class BubbleManager : MonoBehaviour
         to.z = 0.0f;
         Quaternion rotation = Quaternion.FromToRotation(from, to);
         var obj = Instantiate(_bubbleClass, position, rotation);
-        obj.transform.localScale *= Random.Range(0.65f, 1.0f);
+        obj.transform.localScale *= Random.Range(0.75f, 1.0f);
         
         _bubbleCount++;
         _bubbleList.Add(obj);
@@ -215,7 +215,6 @@ public class BubbleManager : MonoBehaviour
 
     public IEnumerator Move(bool moveRight)
     {
-        IsSpawning = true;
         RemoveAllBubbles();
         yield return new WaitForSeconds(0.7f);
 

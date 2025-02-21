@@ -148,6 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8581bb23d642b23469e8f80d1ddb155b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _choiceVisualization: {fileID: 4128273653356355348, guid: c5ff42561e1b1c9439e4c6d4c54e23c4, type: 3}
+  _goodChoiceColor: {r: 0.19039513, g: 0.7056604, b: 0.30689684, a: 1}
+  _badChoiceColor: {r: 0.78113204, g: 0.16165973, b: 0.12232816, a: 1}
   Damage: 0
 --- !u!1 &7257544222494790694
 GameObject:
