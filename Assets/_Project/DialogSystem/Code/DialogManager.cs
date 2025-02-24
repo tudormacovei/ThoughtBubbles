@@ -19,6 +19,8 @@ public class DialogManager : MonoBehaviour
     [Header("Player")]
     [SerializeField] Transform _playerTransform;
 
+    bool _inDialog = false;
+
     void Awake()
     {
         if (Instance == null)
@@ -31,8 +33,14 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void SpawnDialog(string question, List<string> choices, List<int> damages, Sprite bigSprite)
+    // returns: true if the Dialogue was spawned, false otherwise
+    public bool SpawnDialog(string question, List<string> choices, List<int> damages, Sprite bigSprite)
     {
+        if (_inDialog)
+        {
+            return false; // do not spawn a new dialog if we already in an unresolved dialog
+        }
+        _inDialog = true;
         SpawnQuestion(question);
 
         for (int i = 0; i < choices.Count; i++)
@@ -49,6 +57,7 @@ public class DialogManager : MonoBehaviour
             }
             StartCoroutine(choice.GetComponent<ChoiceMove>().CoAnimateButton(distanceY * _choiceAnimOffset));
         }
+        return true;
     }
 
     void SpawnQuestion(string question)
@@ -78,6 +87,8 @@ public class DialogManager : MonoBehaviour
         {
             CatEvent.Instance.CountTrigger(); // count towards cat trigger when choice is made
         }
+
+        _inDialog = false;
     }
 
     public void Move(bool moveRight)

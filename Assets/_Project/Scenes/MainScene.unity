@@ -1649,7 +1649,7 @@ MonoBehaviour:
   _choices:
   - Call a friend to ask them how to take care of it
   - Give it a little bit of water
-  _damages: feffffffffffffff
+  _damages: fdfffffffeffffff
   _interactable: {fileID: 96808906}
   _unInteractable: {fileID: 1364579052}
 --- !u!1 &173650552
@@ -5444,7 +5444,7 @@ MonoBehaviour:
   EndScreenLocation: {x: 50, y: 0, z: -10}
   _endScene: {fileID: 505168012}
   _endCoverObject: {fileID: 763577465}
-  _endMoveDelay: 19
+  _endMoveDelay: 24
   TransitionTime: 3
   IsEnd: 0
 --- !u!4 &936942324
@@ -10241,7 +10241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3668807457845253922, guid: ee563bf5e93ba63428a0a7b782f1f39a, type: 3}
       propertyPath: m_PlaybackSpeed
-      value: 0.6666
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6690931078782354329, guid: ee563bf5e93ba63428a0a7b782f1f39a, type: 3}
       propertyPath: m_Name

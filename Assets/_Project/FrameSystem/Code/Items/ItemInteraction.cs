@@ -27,13 +27,18 @@ public class ItemInteraction : MonoBehaviour
             return;
         }
 
+        bool didSpawnDialogue = DialogManager.Instance.SpawnDialog(_question, _choices, _damages, _interactable.sprite);
+        if (!didSpawnDialogue)
+        {
+            return;
+        }
+
         _col.enabled = false;
 
         StartCoroutine(SpriteFade(_interactable, 0, FrameController.Instance.FadeInDuration));
         StartCoroutine(FrameController.SpriteFade(_unInteractable, 1, FrameController.Instance.FadeInDuration));
 
         FrameController.Instance.DisableButtons();
-        DialogManager.Instance.SpawnDialog(_question, _choices, _damages, _interactable.sprite);
     }
 
     IEnumerator SpriteFade(SpriteRenderer sr, float endValue, float duration)

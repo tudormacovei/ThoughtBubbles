@@ -37,8 +37,7 @@ public class CatInteraction : MonoBehaviour
         
         if (!_didInteract)
         {
-            DialogManager.Instance.SpawnDialog(_question, _choices, _damages, _catSprite);
-            _didInteract = true;
+            _didInteract = DialogManager.Instance.SpawnDialog(_question, _choices, _damages, _catSprite);
         }
 
         yield return new WaitForSeconds(2.0f); // show the petting animation for 2 seconds

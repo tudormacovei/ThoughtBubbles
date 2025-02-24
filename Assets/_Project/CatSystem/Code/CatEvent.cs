@@ -25,8 +25,11 @@ public class CatEvent : Singleton<CatEvent>
 
         if (_triggerCounter >= _triggerThreshold)
         {
-            IsCutScene = true;
-            StartCoroutine(CatDiesEvent());
+            if (!GameManager.Instance.IsEnd)
+            {
+                IsCutScene = true;
+                StartCoroutine(CatDiesEvent());
+            }
         }
     }
         
@@ -39,9 +42,9 @@ public class CatEvent : Singleton<CatEvent>
     {
         _anim.SetBool("IsDead", true);
 
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(6.0f);
 
-        StartCoroutine(FrameController.SpriteFade(_cat, 0, 4));
+        StartCoroutine(FrameController.SpriteFade(_cat, 0, 2.0f));
 
         yield return new WaitForSeconds(2.0f);
 
@@ -49,7 +52,7 @@ public class CatEvent : Singleton<CatEvent>
 
         transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 
-        StartCoroutine(FrameController.SpriteFade(_cat, 1f, 2));
+        StartCoroutine(FrameController.SpriteFade(_cat, 1.5f, 1.0f));
 
         StartCoroutine(MoveOverSeconds(_cat.gameObject.transform, _cat.gameObject.transform.position + new Vector3(0, _height, 0), _time));
         
