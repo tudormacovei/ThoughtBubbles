@@ -735,12 +735,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 0
-  _question: You forgot to turn off the tv.. it's nice to keep some sound in the
-    background
+  _question: You forgot to turn off the TV.. But the background noise is pleasant
   _choices:
   - Turn the tv off
   - Keep it on
-  _damages: 03000000feffffff
+  _damages: fdffffffffffffff
   _interactable: {fileID: 951321096}
   _unInteractable: {fileID: 740472052}
 --- !u!1 &89761612
@@ -1646,11 +1645,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 5
-  _question: You are not sure how to take care of the plant... it looks dry
+  _question: You aren't sure how to take care of your plant... It looks dry
   _choices:
-  - Give it lots of water
+  - Call a friend to ask them how to take care of it
   - Give it a little bit of water
-  _damages: 03000000feffffff
+  _damages: feffffffffffffff
   _interactable: {fileID: 96808906}
   _unInteractable: {fileID: 1364579052}
 --- !u!1 &173650552
@@ -1703,7 +1702,7 @@ MonoBehaviour:
   _dialogIndex: 8
   _question: Haha Bubbles in a clown costume.. so cute!~ I remember this day
   _choices:
-  - Look around
+  - Quickly look away
   - Recall the memory
   _damages: 03000000feffffff
   _interactable: {fileID: 1890996727}
@@ -2400,8 +2399,8 @@ MonoBehaviour:
   _anim: {fileID: 458239863}
   _cat: {fileID: 458239862}
   _cutscene: {fileID: 505168010}
-  _time: 3
-  _height: 11
+  _time: 6
+  _height: 9
   _popText: {fileID: 290523887}
 --- !u!1001 &368855270
 PrefabInstance:
@@ -3704,8 +3703,8 @@ MonoBehaviour:
   _dialogIndex: 6
   _question: You haven't showered in a few days because the shower is broken
   _choices:
-  - Call someone to fix it
-  - Shower at the neighbours
+  - Call a handyman to come and fix it
+  - Ask your neighbour to let you shower at their place
   _damages: fffffffffeffffff
   _interactable: {fileID: 1661484281}
   _unInteractable: {fileID: 790337729}
@@ -4664,11 +4663,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 1
-  _question: There is a funny video on the television... watch some more tv?
+  _question: There is a funny video on the television... watch some more TV?
   _choices:
-  - No
-  - Yes
-  _damages: 03000000feffffff
+  - No, you should be doing something else...
+  - Yes, you deserve a small break
+  _damages: 0100000003000000
   _interactable: {fileID: 732375733}
   _unInteractable: {fileID: 159027345}
 --- !u!1 &857979908
@@ -5097,9 +5096,9 @@ MonoBehaviour:
   _dialogIndex: 2
   _question: You hate the sounds of alarms... and you love sleep
   _choices:
-  - Sleep as long as you want
+  - Don't set an alarm, sleep as long as you want
   - Set an alarm for the next day
-  _damages: 0400000001000000
+  _damages: 0300000001000000
   _interactable: {fileID: 440463652}
   _unInteractable: {fileID: 1311202950}
 --- !u!61 &919876281
@@ -6588,7 +6587,7 @@ MonoBehaviour:
   _choices:
   - I guess, I'll make an easy sandwitch
   - Something fancy
-  _damages: 04000000ffffffff
+  _damages: 03000000feffffff
   _interactable: {fileID: 136107185}
   _unInteractable: {fileID: 864475368}
 --- !u!1 &1229962273
@@ -8524,9 +8523,9 @@ MonoBehaviour:
   _dialogIndex: 9
   _question: I'm feeling nauseous... I don't think I can't drink or eat anything
   _choices:
-  - I don't want to drink water
-  - Still drink some water
-  _damages: 01000000ffffffff
+  - Don't drink anything
+  - Force yourself to drink some water
+  _damages: 02000000ffffffff
   _interactable: {fileID: 1538794212}
   _unInteractable: {fileID: 1869343699}
 --- !u!61 &1595479329
@@ -10390,11 +10389,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 10
-  _question: I don't feel very pretty today..
+  _question: I don't feel very pretty today...
   _choices:
   - Don't look at yourself
   - Stare in the mirror
-  _damages: 0300000005000000
+  _damages: 0300000003000000
   _interactable: {fileID: 1875105834}
   _unInteractable: {fileID: 878109398}
 --- !u!1 &1947121958
@@ -10691,7 +10690,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -5.8943615, y: 8.743605}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10716,7 +10715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogIndex: 7
-  _question: I'm not going out today....
+  _question: I'm not going out today... Should I even bother?
   _choices:
   - Don't brush your teeth
   - Brush your teeth
@@ -10894,7 +10893,7 @@ MonoBehaviour:
   _choices:
   - Make tea
   - Take pills
-  _damages: 01000000fcffffff
+  _damages: 02000000fcffffff
   _interactable: {fileID: 1071982891}
   _unInteractable: {fileID: 210730217}
 --- !u!1 &2059558098

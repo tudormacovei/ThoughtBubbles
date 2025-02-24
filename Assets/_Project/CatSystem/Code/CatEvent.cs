@@ -29,7 +29,7 @@ public class CatEvent : Singleton<CatEvent>
             StartCoroutine(CatDiesEvent());
         }
     }
-
+        
     public void HandleGameEnd()
     {
         _popText.enabled = false;
@@ -41,7 +41,7 @@ public class CatEvent : Singleton<CatEvent>
 
         yield return new WaitForSeconds(4.0f);
 
-        // StartCoroutine(FrameController.SpriteFade(_cat, 0, 4));
+        StartCoroutine(FrameController.SpriteFade(_cat, 0, 4));
 
         yield return new WaitForSeconds(2.0f);
 
@@ -76,5 +76,13 @@ public class CatEvent : Singleton<CatEvent>
 
         gameObject.SetActive(false);
         IsCutScene = false;
+
+        // to speed up game end once Bubbles dies, and provide a sense of urgency
+        // deal damage until player has 8 bubbles on screen
+        int damage = 8 - BubbleManager.Instance.GetBubbleCount();
+        if (damage > 0)
+        {
+            BubbleManager.Instance.HandleDamage(damage);
+        }
     }
 }
